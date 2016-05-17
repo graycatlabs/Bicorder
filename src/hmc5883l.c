@@ -100,7 +100,6 @@ uint8_t HMC5883L_Init(HMC5883L *hmc, LPC_I2C_T *i2c) {
 	ret = MoonLander_I2C_Transaction(hmc->i2c, HMC5883L_I2C_ADDR,
 								     tx_buffer, 1, id_buffer, 3);
 
-	/*
 	if (ret && id_buffer[0] == HMC5883L_ID_A &&
 			id_buffer[1] == HMC5883L_ID_B &&
 			id_buffer[2] == HMC5883L_ID_C) {
@@ -110,9 +109,8 @@ uint8_t HMC5883L_Init(HMC5883L *hmc, LPC_I2C_T *i2c) {
 		hmc->connected = 0;
 		return 0;
 	}
-	*/
 
-	//if (!HMC5883L_SetRange(hmc, HMC5883L_RANGE_1_3)) return 0;
+	if (!HMC5883L_SetRange(hmc, HMC5883L_RANGE_1_3)) return 0;
 	// Set to continuous sampling (@ default 15Hz):
 	tx_buffer[0] = HMC5883L_REG_MODE;
 	tx_buffer[1] = 0x00;

@@ -208,7 +208,7 @@ void SysTick_Handler(void) {
 	if (sample_counter_mag > SAMPLE_PERIOD_MAG) {
 		HMC5883L_GetXYZ(&g_HMC5883L, &mag_x, &mag_y, &mag_z);
 		Plot_AddSample(&g_plot_mag, mag_z);
-		Compass_UpdateXY(&g_compass, mag_x, mag_y);
+		Compass_UpdateXY(&g_compass, mag_x, -mag_y);
 		sample_counter_mag = 0;
 	}
 

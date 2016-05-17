@@ -26,21 +26,21 @@ void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y) {
 }
 
 double Compass_CalculateHeading(uCorder_Compass *compass) {
-	int32_t x_utesla, y_utesla;
-	double radians;
-	x_utesla = FP_TO_INT(compass->mag_x);
-	y_utesla = FP_TO_INT(compass->mag_y);
-	radians = atan2((double) y_utesla, (double) x_utesla);
+	double x_utesla, y_utesla, radians;
+	x_utesla = FP_TO_FLOAT(compass->mag_x);
+	y_utesla = FP_TO_FLOAT(compass->mag_y);
+	radians = atan2(y_utesla, x_utesla);
 	return radians + COMPASS_DECLINATION;
 }
 
 uint16_t Compass_RadiansToDegrees(double radians) {
-	return (uint16_t) (57.2958 * radians) + COMPASS_DECLINATION;
+	return (uint16_t) (57.2958 * radians);
 }
 
 Compass_direction Compass_RadiansToDirection(double radians) {
 	uint16_t heading;
 	heading = Compass_RadiansToDegrees(radians);
+
 	if (heading <= 11) return COMPASS_N;
 	if (heading <= 34) return COMPASS_NNE;
 	if (heading <= 56) return COMPASS_NE;
@@ -60,29 +60,28 @@ Compass_direction Compass_RadiansToDirection(double radians) {
 	return COMPASS_N;
 }
 
-
 int8_t north_offset_x[16] = {
-	12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4, 0, 5, 8, 11
+	0, 5, 8, 11, 12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4,
 };
 
 int8_t north_offset_y[16] = {
-	0, 5, 8, 11, 12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4
+	-11, -10, -7, -4, 0, 5, 8, 11, 12, 11, 8, 5, 0, -4, -7, -10,
 };
 
 int8_t south_offset_x[16] = {
-	-4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2, 0, -1, -3, -4
+	0, -1, -3, -4, -4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2,
 };
 
 int8_t south_offset_y[16] = {
-	0, -1, -3, -4, -4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2
+	5, 5, 4, 2, 0, -1, -3, -4, -4, -4, -3, -1, 0, 2, 4, 5,
 };
 
 int8_t base_offset_x[16] = {
-	0, 2, 3, 4, 4, 4, 3, 2, 0, -1, -2, -3, -3, -3, -2, -1
+	4, 4, 3, 2, 0, -1, -2, -3, -3, -3, -2, -1, 0, 2, 3, 4,
 };
 
 int8_t base_offset_y[16] = {
-	-3, -3, -2, -1, 0, 2, 3, 4, 4, 4, 3, 2, 0, -1, -2, -3
+	0, 2, 3, 4, 4, 4, 3, 2, 0, -1, -2, -3, -3, -3, -2, -1,
 };
 
 
