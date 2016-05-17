@@ -57,6 +57,7 @@ static volatile uint8_t g_sw_right_debouncing = 0;
 static volatile uint16_t g_sw_right_debounce_counter;
 
 static volatile uint8_t g_go_to_sleep;
+static volatile uint8_t g_ignore_switches;
 
 void gpioInit(void) {
     //Chip_GPIO_Init(LPC_GPIO_PORT);
@@ -279,6 +280,8 @@ void SysTick_Handler(void) {
 void SW_LEFT_IRQHandler(void) {
 	Chip_PININT_ClearIntStatus(LPC_PININT, SW_LEFT_PININTCH);
 
+	if (g_ignore_switches) return;
+
 	if (!g_sw_left_debouncing) {
 		g_left_display = (g_left_display + 1) % N_DISPLAYS;
 
@@ -292,6 +295,8 @@ void SW_LEFT_IRQHandler(void) {
 
 void SW_RIGHT_IRQHandler(void) {
 	Chip_PININT_ClearIntStatus(LPC_PININT, SW_RIGHT_PININTCH);
+
+	if (g_ignore_switches) return;
 
 	if (!g_sw_right_debouncing) {
 		g_right_display = (g_right_display + 1) % N_DISPLAYS;
@@ -339,8 +344,8 @@ void goToSleep(void) {
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, LCD_BACKLIGHT, 1);
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, RANGE_POWER_PIN, 0);
 
-	// Give time to release switch:
-	delayms(1000);
+	// Give plenty of time to release switch:
+	delayms(750);
 
 	// Disable systick timer:
 	SysTick->CTRL  &= ~SysTick_CTRL_ENABLE_Msk;
@@ -453,11 +458,15 @@ int main(void) {
     		// Write the empty back buffer to the screen:
     		eGFX_Dump(&eGFX_BackBuffer, &g_C12832A);
 
+    		g_ignore_switches = 1;
     		// Sleep!
     		goToSleep();
 
     		// Processor has been woken up, restart clocks, etc.:
     		wakeup();
+
+    		delayms(SW_DEBOUNCE_MS);
+    		g_ignore_switches = 0;
     	}
 
     	switch (g_left_display) {
