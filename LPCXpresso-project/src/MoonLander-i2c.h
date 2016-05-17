@@ -4,11 +4,12 @@
  *  Created on: May 15, 2016
  *      Author: Alex Hiam <alex@graycat.io>
  *		Copyright (c) 2016 - Gray Cat Labs
+ *
+ *	Basic polling I2C driver for the LPC824 (and probably other LPC8xx)
  */
 
 #ifndef MOONLANDER_I2C_H_
 #define MOONLANDER_I2C_H_
-
 
 
 uint32_t MoonLander_I2C_Read(LPC_I2C_T *i2c_port, uint8_t slave_addr,
