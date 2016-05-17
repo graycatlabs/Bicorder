@@ -69,8 +69,6 @@ void gpioInit(void) {
 	Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, 0, MoonLander_LED);
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_LED, 0);
 
-	Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, MoonLander_SW1);
-
 	Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, SW_LEFT);
 	Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, SW_RIGHT);
 }
@@ -78,19 +76,17 @@ void gpioInit(void) {
 void interruptInit(void) {
 	Chip_SYSCTL_SetPinInterrupt(0, SW_LEFT);
 	Chip_SYSCTL_SetPinInterrupt(1, SW_RIGHT);
-	Chip_SYSCTL_SetPinInterrupt(2, MoonLander_SW1);
 
 	Chip_PININT_SetPinModeEdge(LPC_PININT,
-			SW_LEFT_PININTCH | SW_RIGHT_PININTCH | SW1_PININTCH);
+			SW_LEFT_PININTCH | SW_RIGHT_PININTCH);
 	Chip_PININT_EnableIntLow(LPC_PININT,
-			SW_LEFT_PININTCH | SW_RIGHT_PININTCH | SW1_PININTCH);
+			SW_LEFT_PININTCH | SW_RIGHT_PININTCH);
 
 	Chip_PININT_ClearIntStatus(LPC_PININT,
-			SW_RIGHT_PININTCH | SW_LEFT_PININTCH | SW1_PININTCH);
+			SW_RIGHT_PININTCH | SW_LEFT_PININTCH);
 
 	NVIC_EnableIRQ(SW_LEFT_IRQn);
 	NVIC_EnableIRQ(SW_RIGHT_IRQn);
-	NVIC_EnableIRQ(SW1_IRQn);
 }
 
 void adcInit(void) {
@@ -181,6 +177,11 @@ void SysTick_Handler(void) {
 
 	static uint32_t sample_counter_range = 30;
 
+	static uint32_t left_sw_hold_counter = 0;
+	static uint8_t left_sw_engaged = 0;
+	static uint32_t right_sw_hold_counter = 0;
+	static uint8_t right_sw_engaged = 0;
+
 	g_delayms_counter += MS_PER_TICK;
 
 	//blink_counter += MS_PER_TICK;
@@ -222,7 +223,39 @@ void SysTick_Handler(void) {
 		}
 	}
 
+	if (left_sw_engaged) {
+		if (Chip_GPIO_GetPinState(LPC_GPIO_PORT, 0, SW_LEFT)) {
+			left_sw_engaged = 0;
+			left_sw_hold_counter = 0;
+		}
+		else {
+			left_sw_hold_counter += MS_PER_TICK;
+			if (left_sw_hold_counter >= SW_OFF_HOLD_TIME_MS) {
+				g_go_to_sleep = 1;
+				left_sw_hold_counter = 0;
+				left_sw_engaged = 0;
+			}
+		}
+	}
+
+
+	if (right_sw_engaged) {
+		if (Chip_GPIO_GetPinState(LPC_GPIO_PORT, 0, SW_RIGHT)) {
+			right_sw_engaged = 0;
+			right_sw_hold_counter = 0;
+		}
+		else {
+			right_sw_hold_counter += MS_PER_TICK;
+			if (right_sw_hold_counter >= SW_OFF_HOLD_TIME_MS) {
+				g_go_to_sleep = 1;
+				right_sw_hold_counter = 0;
+				right_sw_engaged = 0;
+			}
+		}
+	}
+
 	if (g_sw_left_debouncing) {
+		left_sw_engaged = 1;
 		g_sw_left_debounce_counter += MS_PER_TICK;
 		if (g_sw_left_debounce_counter >= SW_DEBOUNCE_MS) {
 			g_sw_left_debouncing = 0;
@@ -231,6 +264,7 @@ void SysTick_Handler(void) {
 	}
 
 	if (g_sw_right_debouncing) {
+		right_sw_engaged = 1;
 		g_sw_right_debounce_counter += MS_PER_TICK;
 		if (g_sw_right_debounce_counter >= SW_DEBOUNCE_MS) {
 			g_sw_right_debouncing = 0;
@@ -270,11 +304,6 @@ void SW_RIGHT_IRQHandler(void) {
 	}
 }
 
-void SW1_IRQHandler(void) {
-	Chip_PININT_ClearIntStatus(LPC_PININT, SW1_PININTCH);
-	g_go_to_sleep = 1;
-}
-
 
 void ADC_SEQA_IRQHandler(void)
 {
@@ -307,21 +336,27 @@ float getRangeInches(void) {
 
 
 void goToSleep(void) {
-	SysTick->CTRL  &= ~SysTick_CTRL_ENABLE_Msk;
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, LCD_BACKLIGHT, 1);
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, RANGE_POWER_PIN, 0);
+
+	// Give time to release switch:
+	delayms(1000);
+
+	// Disable systick timer:
+	SysTick->CTRL  &= ~SysTick_CTRL_ENABLE_Msk;
+
 	// Only allow enabled IRQ's to wake us up:
-	NVIC_DisableIRQ(SW_LEFT_IRQn);
-	NVIC_DisableIRQ(SW_RIGHT_IRQn);
 	NVIC_DisableIRQ(ADC_SEQA_IRQn);
 	g_go_to_sleep = 0;
-	Chip_SYSCTL_EnablePINTWakeup(SW1_PININT);
+	Chip_SYSCTL_EnablePINTWakeup(SW_LEFT_PININT);
+	Chip_SYSCTL_EnablePINTWakeup(SW_RIGHT_PININT);
 	SCB->SCR &= ~(SCB_SCR_SEVONPEND_Msk);
 	Chip_PMU_SleepState(LPC_PMU);
 }
 
 void wakeup(void) {
-	Chip_SYSCTL_DisablePINTWakeup(SW1_PININT);
+	Chip_SYSCTL_DisablePINTWakeup(SW_LEFT_PININT);
+	Chip_SYSCTL_DisablePINTWakeup(SW_RIGHT_PININT);
 	g_go_to_sleep = 0;
 
 	Plot_Clear(&g_plot_temp);
@@ -414,8 +449,6 @@ int main(void) {
     	fillScreen(0x0);
 
     	if (g_go_to_sleep) {
-    		// Give time to release switch:
-    		delayms(SW_DEBOUNCE_MS);
 
     		// Write the empty back buffer to the screen:
     		eGFX_Dump(&eGFX_BackBuffer, &g_C12832A);

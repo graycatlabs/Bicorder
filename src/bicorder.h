@@ -40,12 +40,9 @@
 #define SW_RIGHT_IRQn       PININT1_IRQn
 #define SW_RIGHT_IRQHandler PIN_INT1_IRQHandler
 
-#define SW1_PININT     2
-#define SW1_PININTCH   (1<<SW1_PININT)
-#define SW1_IRQn       PININT2_IRQn
-#define SW1_IRQHandler PIN_INT2_IRQHandler
+#define SW_DEBOUNCE_MS      300
 
-#define SW_DEBOUNCE_MS 300
+#define SW_OFF_HOLD_TIME_MS 2000
 
 #define RANGE_POWER_PIN MoonLander_IO6
 #define RANGE_AIN       MoonLander_IO8_ADC
