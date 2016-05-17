@@ -25,21 +25,21 @@ void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y) {
 	compass->mag_y = y;
 }
 
-double Compass_CalculateHeading(uCorder_Compass *compass) {
-	double x_utesla, y_utesla, radians;
-	x_utesla = FP_TO_FLOAT(compass->mag_x);
-	y_utesla = FP_TO_FLOAT(compass->mag_y);
-	radians = atan2(y_utesla, x_utesla);
-	return radians + COMPASS_DECLINATION;
+uint16_t Compass_CalculateHeading(uCorder_Compass *compass) {
+	double x, y, heading;
+	x = FP_TO_FLOAT(compass->mag_x);
+	y = FP_TO_FLOAT(compass->mag_y);
+
+	if (y > 0) heading = 90 - atan(x/y) * 57.2958;
+	else if (y < 0) heading = 270 - atan(x/y) * 57.2958;
+	else if (y == 0 && x < 0) heading = 180.0;
+	else heading = 0.0;
+
+	return (((uint16_t) heading) + COMPASS_DECLINATION) % 360;
 }
 
-uint16_t Compass_RadiansToDegrees(double radians) {
-	return (uint16_t) (57.2958 * radians);
-}
 
-Compass_direction Compass_RadiansToDirection(double radians) {
-	uint16_t heading;
-	heading = Compass_RadiansToDegrees(radians);
+Compass_direction Compass_HeadingToDirection(uint16_t heading) {
 
 	if (heading <= 11) return COMPASS_N;
 	if (heading <= 34) return COMPASS_NNE;
@@ -61,19 +61,19 @@ Compass_direction Compass_RadiansToDirection(double radians) {
 }
 
 int8_t north_offset_x[16] = {
-	0, 5, 8, 11, 12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4,
+	0, -4, -7, -10, -11, -10, -7, -4, 0, 5, 8, 11, 12, 11, 8, 5,
 };
 
 int8_t north_offset_y[16] = {
-	-11, -10, -7, -4, 0, 5, 8, 11, 12, 11, 8, 5, 0, -4, -7, -10,
+	12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4, 0, 5, 8, 11,
 };
 
 int8_t south_offset_x[16] = {
-	0, -1, -3, -4, -4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2,
+	0, 2, 4, 5, 5, 5, 4, 2, 0, -1, -3, -4, -4, -4, -3, -1,
 };
 
 int8_t south_offset_y[16] = {
-	5, 5, 4, 2, 0, -1, -3, -4, -4, -4, -3, -1, 0, 2, 4, 5,
+	-4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2, 0, -1, -3, -4,
 };
 
 int8_t base_offset_x[16] = {
@@ -90,7 +90,7 @@ void Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass,
 	uint8_t center_x, center_y, north_x, north_y, south_x, south_y;
 	uint8_t base_x1, base_y1, base_x2, base_y2;
 	Compass_direction direction;
-	double heading;
+	uint16_t heading;
 	heading = Compass_CalculateHeading(compass);
 
 	if	(side == COMPASS_LEFT) center_x = 31;
@@ -98,7 +98,7 @@ void Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass,
 	center_y = 19;
 
 	eGFX_DrawString(image, "Compass", center_x - 14, 1, &FONT_3_5_1BPP);
-	direction = Compass_RadiansToDirection(heading);
+	direction = Compass_HeadingToDirection(heading);
 	north_x = center_x + north_offset_x[direction];
 	north_y = center_y - north_offset_y[direction];
 

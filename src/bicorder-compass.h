@@ -13,8 +13,8 @@
 #include "eGFX_DataTypes.h"
 
 // Declination in radians:
-//#define COMPASS_DECLINATION (-0.2618) // VT
-#define COMPASS_DECLINATION (0.2618) // San Fran
+//#define COMPASS_DECLINATION (-15) // VT
+#define COMPASS_DECLINATION (15) // San Fran
 
 typedef struct {
 	int_fp mag_x;
@@ -25,9 +25,7 @@ void Compass_Init(uCorder_Compass *compass);
 
 void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y);
 
-double Compass_CalculateHeading(uCorder_Compass *compass);
-
-uint16_t Compass_RadiansToDegrees(double radians);
+uint16_t Compass_CalculateHeading(uCorder_Compass *compass);
 
 typedef enum {
 	COMPASS_N,
@@ -47,10 +45,8 @@ typedef enum {
 	COMPASS_NW,
 	COMPASS_NNW
 } Compass_direction;
-Compass_direction Compass_RadiansToDirection(double radians);
+Compass_direction Compass_HeadingToDirection(uint16_t heading);
 
-
-uint16_t Compass_CalculateHeadingDegrees(uCorder_Compass *compass);
 
 typedef enum {
 	COMPASS_LEFT,

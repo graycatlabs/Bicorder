@@ -440,7 +440,7 @@ int main(void) {
     Compass_Init(&g_compass);
 
     g_left_display = DISPLAY_TEMP;
-    g_right_display = DISPLAY_RH;
+    g_right_display = DISPLAY_COMPASS;
 
     // Straight to sleep on boot:
     g_go_to_sleep = 1;
