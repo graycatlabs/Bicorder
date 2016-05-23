@@ -1,0 +1,138 @@
+\hypertarget{bicorder-compass_8c}{}\section{bicorder-\/compass.c File Reference}
+\label{bicorder-compass_8c}\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+
+
+A library for generating generic live plots on the Bicorder.  
+
+
+{\ttfamily \#include \char`\"{}bicorder-\/compass.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gcl-\/fixedpoint.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Data\+Types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Fonts/\+F\+O\+N\+T\+\_\+3\+\_\+5\+\_\+1\+B\+P\+P.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+Include dependency graph for bicorder-\/compass.c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Compass\+\_\+\+Init} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass)\hypertarget{bicorder-compass_8c_a25d1189ee5127c18accd79eb68019cde}{}\label{bicorder-compass_8c_a25d1189ee5127c18accd79eb68019cde}
+
+\item 
+void {\bfseries Compass\+\_\+\+Update\+XY} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass, int\+\_\+fp x, int\+\_\+fp y)\hypertarget{bicorder-compass_8c_a3e79bc358c252d3044f23b7e0766b54f}{}\label{bicorder-compass_8c_a3e79bc358c252d3044f23b7e0766b54f}
+
+\item 
+uint16\+\_\+t {\bfseries Compass\+\_\+\+Calculate\+Heading} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass)\hypertarget{bicorder-compass_8c_a0fd608a7bf9aea8112efb03a4bc9bc5f}{}\label{bicorder-compass_8c_a0fd608a7bf9aea8112efb03a4bc9bc5f}
+
+\item 
+Compass\+\_\+direction {\bfseries Compass\+\_\+\+Heading\+To\+Direction} (uint16\+\_\+t heading)\hypertarget{bicorder-compass_8c_a1051f457631ee90b4f082177cf19d469}{}\label{bicorder-compass_8c_a1051f457631ee90b4f082177cf19d469}
+
+\item 
+void {\bfseries Compass\+\_\+\+Draw} (e\+G\+F\+X\+\_\+\+Image\+Plane $\ast$image, \hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass, Compass\+\_\+side side)\hypertarget{bicorder-compass_8c_a0ae721c1c17301cdf28bd0668a4f90af}{}\label{bicorder-compass_8c_a0ae721c1c17301cdf28bd0668a4f90af}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t {\bfseries north\+\_\+offset\+\_\+x} \mbox{[}16\mbox{]}
+\item 
+int8\+\_\+t {\bfseries north\+\_\+offset\+\_\+y} \mbox{[}16\mbox{]}
+\item 
+int8\+\_\+t {\bfseries south\+\_\+offset\+\_\+x} \mbox{[}16\mbox{]}
+\item 
+int8\+\_\+t {\bfseries south\+\_\+offset\+\_\+y} \mbox{[}16\mbox{]}
+\item 
+int8\+\_\+t {\bfseries base\+\_\+offset\+\_\+x} \mbox{[}16\mbox{]}
+\item 
+int8\+\_\+t {\bfseries base\+\_\+offset\+\_\+y} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A library for generating generic live plots on the Bicorder. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}
+
+
+\subsection{Variable Documentation}
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!base\+\_\+offset\+\_\+x@{base\+\_\+offset\+\_\+x}}
+\index{base\+\_\+offset\+\_\+x@{base\+\_\+offset\+\_\+x}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{base\+\_\+offset\+\_\+x}{base_offset_x}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t base\+\_\+offset\+\_\+x\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_a98787995d5633458ea73de2c1cd3506e}{}\label{bicorder-compass_8c_a98787995d5633458ea73de2c1cd3506e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  4, 4, 3, 2, 0, -1, -2, -3, -3, -3, -2, -1, 0, 2, 3, 4,
+\}
+\end{DoxyCode}
+
+
+Definition at line 100 of file bicorder-\/compass.\+c.
+
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!base\+\_\+offset\+\_\+y@{base\+\_\+offset\+\_\+y}}
+\index{base\+\_\+offset\+\_\+y@{base\+\_\+offset\+\_\+y}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{base\+\_\+offset\+\_\+y}{base_offset_y}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t base\+\_\+offset\+\_\+y\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_ab2d38ec490e55df278225434732d93bc}{}\label{bicorder-compass_8c_ab2d38ec490e55df278225434732d93bc}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0, 2, 3, 4, 4, 4, 3, 2, 0, -1, -2, -3, -3, -3, -2, -1,
+\}
+\end{DoxyCode}
+
+
+Definition at line 104 of file bicorder-\/compass.\+c.
+
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!north\+\_\+offset\+\_\+x@{north\+\_\+offset\+\_\+x}}
+\index{north\+\_\+offset\+\_\+x@{north\+\_\+offset\+\_\+x}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{north\+\_\+offset\+\_\+x}{north_offset_x}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t north\+\_\+offset\+\_\+x\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_a9e245bf201b495b96656c0373c22f087}{}\label{bicorder-compass_8c_a9e245bf201b495b96656c0373c22f087}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0, -4, -7, -10, -11, -10, -7, -4, 0, 5, 8, 11, 12, 11, 8, 5,
+\}
+\end{DoxyCode}
+
+
+Definition at line 84 of file bicorder-\/compass.\+c.
+
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!north\+\_\+offset\+\_\+y@{north\+\_\+offset\+\_\+y}}
+\index{north\+\_\+offset\+\_\+y@{north\+\_\+offset\+\_\+y}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{north\+\_\+offset\+\_\+y}{north_offset_y}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t north\+\_\+offset\+\_\+y\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_a1e4b5abf711c33a03ea86f97d207f380}{}\label{bicorder-compass_8c_a1e4b5abf711c33a03ea86f97d207f380}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  12, 11, 8, 5, 0, -4, -7, -10, -11, -10, -7, -4, 0, 5, 8, 11,
+\}
+\end{DoxyCode}
+
+
+Definition at line 88 of file bicorder-\/compass.\+c.
+
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!south\+\_\+offset\+\_\+x@{south\+\_\+offset\+\_\+x}}
+\index{south\+\_\+offset\+\_\+x@{south\+\_\+offset\+\_\+x}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{south\+\_\+offset\+\_\+x}{south_offset_x}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t south\+\_\+offset\+\_\+x\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_afc3969d34ed39e2f95bb04cebb6fa843}{}\label{bicorder-compass_8c_afc3969d34ed39e2f95bb04cebb6fa843}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  0, 2, 4, 5, 5, 5, 4, 2, 0, -1, -3, -4, -4, -4, -3, -1,
+\}
+\end{DoxyCode}
+
+
+Definition at line 92 of file bicorder-\/compass.\+c.
+
+\index{bicorder-\/compass.\+c@{bicorder-\/compass.\+c}!south\+\_\+offset\+\_\+y@{south\+\_\+offset\+\_\+y}}
+\index{south\+\_\+offset\+\_\+y@{south\+\_\+offset\+\_\+y}!bicorder-\/compass.\+c@{bicorder-\/compass.\+c}}
+\subsubsection[{\texorpdfstring{south\+\_\+offset\+\_\+y}{south_offset_y}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t south\+\_\+offset\+\_\+y\mbox{[}16\mbox{]}}\hypertarget{bicorder-compass_8c_ad492060f38a636c2a8cdc244050327f8}{}\label{bicorder-compass_8c_ad492060f38a636c2a8cdc244050327f8}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  -4, -4, -3, -1, 0, 2, 4, 5, 5, 5, 4, 2, 0, -1, -3, -4,
+\}
+\end{DoxyCode}
+
+
+Definition at line 96 of file bicorder-\/compass.\+c.
+

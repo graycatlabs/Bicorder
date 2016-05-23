@@ -1,0 +1,12 @@
+digraph "htu21d.c"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="htu21d.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="chip.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="htu21d.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$htu21d_8h_source.html"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MoonLander-i2c.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MoonLander-i2c_8h.html",tooltip="Basic polling I2C master driver for the NXP LPC824 (and probably other LPC8XX) ARM Cortex-M0+..."];
+}

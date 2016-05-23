@@ -1,0 +1,60 @@
+\hypertarget{eGFX__Driver__C12832A__LPC824_8c}{}\section{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+c File Reference}
+\label{eGFX__Driver__C12832A__LPC824_8c}\index{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+c@{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+c}}
+
+
+An e\+G\+FX driver for the Newhaven Display C12832A on the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+.  
+
+
+{\ttfamily \#include \char`\"{}chip.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Data\+Types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h\char`\"{}}\\*
+Include dependency graph for e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries C12832\+A\+\_\+\+Configure\+S\+PI} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a2612e59e8504dd2ef05e611ce557bdd0}{}\label{eGFX__Driver__C12832A__LPC824_8c_a2612e59e8504dd2ef05e611ce557bdd0}
+
+\item 
+void {\bfseries C12832\+A\+\_\+write\+Command} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t command)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a7be63d7001bd75e9db1a1857c67b05f4}{}\label{eGFX__Driver__C12832A__LPC824_8c_a7be63d7001bd75e9db1a1857c67b05f4}
+
+\item 
+void {\bfseries C12832\+A\+\_\+write\+Data} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t data)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a5159f50c89913db67162645b32f1ab4c}{}\label{eGFX__Driver__C12832A__LPC824_8c_a5159f50c89913db67162645b32f1ab4c}
+
+\item 
+void {\bfseries C12832\+A\+\_\+set\+Page\+Address} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t page)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a094e974af0ad7ae69ccc6e616453a4dc}{}\label{eGFX__Driver__C12832A__LPC824_8c_a094e974af0ad7ae69ccc6e616453a4dc}
+
+\item 
+void {\bfseries C12832\+A\+\_\+set\+Column\+Address} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t column)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_ac2d0d175a567a23a8cee7325d6ccfbf4}{}\label{eGFX__Driver__C12832A__LPC824_8c_ac2d0d175a567a23a8cee7325d6ccfbf4}
+
+\item 
+void {\bfseries C12832\+A\+\_\+\+Init} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, L\+P\+C\+\_\+\+S\+P\+I\+\_\+T $\ast$lpc\+\_\+spi, uint8\+\_\+t a0\+\_\+pin, uint8\+\_\+t rst\+\_\+pin, uint8\+\_\+t ssel\+\_\+num)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a15172167a2183c38ef7c3f3de652f2df}{}\label{eGFX__Driver__C12832A__LPC824_8c_a15172167a2183c38ef7c3f3de652f2df}
+
+\item 
+void {\bfseries C12832\+A\+\_\+\+Set\+Contrast} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t contrast)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a31bc01450c074e81ee6136dae6a058fa}{}\label{eGFX__Driver__C12832A__LPC824_8c_a31bc01450c074e81ee6136dae6a058fa}
+
+\item 
+void {\bfseries e\+G\+F\+X\+\_\+\+Init\+Driver} ()\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a24c7d9ac123071415be1c93f7b3b0f17}{}\label{eGFX__Driver__C12832A__LPC824_8c_a24c7d9ac123071415be1c93f7b3b0f17}
+
+\item 
+void {\bfseries e\+G\+F\+X\+\_\+\+Dump} (e\+G\+F\+X\+\_\+\+Image\+Plane $\ast$Image, \hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen)\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a07007ba5b20622de129f0d96f8d4893d}{}\label{eGFX__Driver__C12832A__LPC824_8c_a07007ba5b20622de129f0d96f8d4893d}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+e\+G\+F\+X\+\_\+\+Image\+Plane {\bfseries e\+G\+F\+X\+\_\+\+Back\+Buffer}\hypertarget{eGFX__Driver__C12832A__LPC824_8c_a3687479ac9e398c2b42e30a3f45e7ba2}{}\label{eGFX__Driver__C12832A__LPC824_8c_a3687479ac9e398c2b42e30a3f45e7ba2}
+
+\item 
+uint8\+\_\+t {\bfseries Back\+Buffer\+Store} \mbox{[}e\+G\+F\+X\+\_\+\+C\+A\+L\+C\+U\+L\+A\+T\+E\+\_\+1\+B\+P\+P\+\_\+\+I\+M\+A\+G\+E\+\_\+\+S\+T\+O\+R\+A\+G\+E\+\_\+\+S\+P\+A\+C\+E\+\_\+\+S\+I\+ZE(e\+G\+F\+X\+\_\+\+P\+H\+Y\+S\+I\+C\+A\+L\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+S\+I\+Z\+E\+\_\+X, e\+G\+F\+X\+\_\+\+P\+H\+Y\+S\+I\+C\+A\+L\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+S\+I\+Z\+E\+\_\+Y)\mbox{]}\hypertarget{eGFX__Driver__C12832A__LPC824_8c_ad6691994d3069e944f793487ca9b6346}{}\label{eGFX__Driver__C12832A__LPC824_8c_ad6691994d3069e944f793487ca9b6346}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An e\+G\+FX driver for the Newhaven Display C12832A on the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}

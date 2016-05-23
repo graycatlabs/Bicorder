@@ -1,12 +1,48 @@
-/*
-===============================================================================
- Name        : bicorder.c
- Author      : Alex Hiam <alex@graycat.io>
- Version     :
- Copyright   : Gray Cat Labs - 2016
- Description : main definition
-===============================================================================
-*/
+/*******************************************************************************
+ * Copyright (c) 2016 - Gray Cat Labs - https://graycat.io
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ ******************************************************************************/
+
+/**
+ * @file bicorder.c
+ * @author Alex Hiam - <alex@graycat.io>
+ *
+ * @brief A Tricorder inspired project using the Gray Cat Labs MoonLander.
+ *
+ * The Bicorder (not quite a Tricorder) currently has a 3-axis magnetometer,
+ * a relative humidity / temperature sensor and an infrared range finder. It
+ * uses a 128x32 pixel monochrome LCD from Newhaven, which is divided into
+ * left and right sections, each displaying one of:
+ * - live plot of temperature (in Celsius)
+ * - live plot of relative humidity
+ * - live plot of magnetic field (Z-axis) in uTesla
+ * - a compass display (using the mag X and Y)
+ * - a distance readout in cm
+ *
+ * There's plenty of room for improvement, such as adding an acceleromter
+ * for compass tilt compensation, switching to an ultrasonic range finder
+ * for higher accuracy and lower power, as well as just adding more sensors.
+ *
+ * @see https://hackaday.io/project/9176-moonlander
+ * @see https://github.com/graycatlabs/MoonLander
+ */
 
 #include "bicorder.h"
 

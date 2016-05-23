@@ -1,0 +1,117 @@
+\hypertarget{hmc5883l_8c}{}\section{hmc5883l.\+c File Reference}
+\label{hmc5883l_8c}\index{hmc5883l.\+c@{hmc5883l.\+c}}
+
+
+A library for the \hyperlink{structHMC5883L}{H\+M\+C5883L} 3-\/axis I2C magnetometer.  
+
+
+{\ttfamily \#include \char`\"{}chip.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hmc5883l.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gcl-\/fixedpoint.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Moon\+Lander-\/i2c.\+h\char`\"{}}\\*
+Include dependency graph for hmc5883l.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{hmc5883l_8c_a35725553949d7a5a7cb449a1ffb1a03c}{H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ} (\hyperlink{structHMC5883L}{H\+M\+C5883L} $\ast$hmc, int\+\_\+fp $\ast$x, int\+\_\+fp $\ast$y, int\+\_\+fp $\ast$z)
+\begin{DoxyCompactList}\small\item\em Reads the current magnetic field strength. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{hmc5883l_8c_abcaa47591441d63bf763990731ae7fdd}{H\+M\+C5883\+L\+\_\+\+Set\+Range} (\hyperlink{structHMC5883L}{H\+M\+C5883L} $\ast$hmc, \hyperlink{hmc5883l_8h_a741d6341bd7d31bf60ea406397fd4ffe}{H\+M\+C5883\+L\+\_\+range} range)
+\begin{DoxyCompactList}\small\item\em Sets the range of the \hyperlink{structHMC5883L}{H\+M\+C5883L}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{hmc5883l_8c_a24b3cc080b91995fb1b3c837253f3a68}{H\+M\+C5883\+L\+\_\+\+Init} (\hyperlink{structHMC5883L}{H\+M\+C5883L} $\ast$hmc, L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$i2c)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{structHMC5883L}{H\+M\+C5883L} on the given I2C port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A library for the \hyperlink{structHMC5883L}{H\+M\+C5883L} 3-\/axis I2C magnetometer. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{hmc5883l.\+c@{hmc5883l.\+c}!H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ@{H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ}}
+\index{H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ@{H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ}!hmc5883l.\+c@{hmc5883l.\+c}}
+\subsubsection[{\texorpdfstring{H\+M\+C5883\+L\+\_\+\+Get\+X\+Y\+Z(\+H\+M\+C5883\+L $\ast$hmc, int\+\_\+fp $\ast$x, int\+\_\+fp $\ast$y, int\+\_\+fp $\ast$z)}{HMC5883L_GetXYZ(HMC5883L *hmc, int_fp *x, int_fp *y, int_fp *z)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t H\+M\+C5883\+L\+\_\+\+Get\+X\+YZ (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+C5883L} $\ast$}]{hmc, }
+\item[{int32\+\_\+t $\ast$}]{x, }
+\item[{int32\+\_\+t $\ast$}]{y, }
+\item[{int32\+\_\+t $\ast$}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{hmc5883l_8c_a35725553949d7a5a7cb449a1ffb1a03c}{}\label{hmc5883l_8c_a35725553949d7a5a7cb449a1ffb1a03c}
+
+
+Reads the current magnetic field strength. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hmc} & Pointer to an initialized \hyperlink{structHMC5883L}{H\+M\+C5883L} object \\
+\hline
+{\em x} & Address to store current X value in u\+Tesla \\
+\hline
+{\em y} & Address to store current Y value in u\+Tesla \\
+\hline
+{\em z} & Address to store current Z value in u\+Tesla\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on success. 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file hmc5883l.\+c.
+
+\index{hmc5883l.\+c@{hmc5883l.\+c}!H\+M\+C5883\+L\+\_\+\+Init@{H\+M\+C5883\+L\+\_\+\+Init}}
+\index{H\+M\+C5883\+L\+\_\+\+Init@{H\+M\+C5883\+L\+\_\+\+Init}!hmc5883l.\+c@{hmc5883l.\+c}}
+\subsubsection[{\texorpdfstring{H\+M\+C5883\+L\+\_\+\+Init(\+H\+M\+C5883\+L $\ast$hmc, L\+P\+C\+\_\+\+I2\+C\+\_\+\+T $\ast$i2c)}{HMC5883L_Init(HMC5883L *hmc, LPC_I2C_T *i2c)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t H\+M\+C5883\+L\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+C5883L} $\ast$}]{hmc, }
+\item[{L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$}]{i2c}
+\end{DoxyParamCaption}
+)}\hypertarget{hmc5883l_8c_a24b3cc080b91995fb1b3c837253f3a68}{}\label{hmc5883l_8c_a24b3cc080b91995fb1b3c837253f3a68}
+
+
+Initializes the \hyperlink{structHMC5883L}{H\+M\+C5883L} on the given I2C port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hmc} & Pointer to an \hyperlink{structHMC5883L}{H\+M\+C5883L} object \\
+\hline
+{\em i2c\+\_\+port} & Pointer to the I2C port\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on successful initialization. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file hmc5883l.\+c.
+
+\index{hmc5883l.\+c@{hmc5883l.\+c}!H\+M\+C5883\+L\+\_\+\+Set\+Range@{H\+M\+C5883\+L\+\_\+\+Set\+Range}}
+\index{H\+M\+C5883\+L\+\_\+\+Set\+Range@{H\+M\+C5883\+L\+\_\+\+Set\+Range}!hmc5883l.\+c@{hmc5883l.\+c}}
+\subsubsection[{\texorpdfstring{H\+M\+C5883\+L\+\_\+\+Set\+Range(\+H\+M\+C5883\+L $\ast$hmc, H\+M\+C5883\+L\+\_\+range range)}{HMC5883L_SetRange(HMC5883L *hmc, HMC5883L_range range)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t H\+M\+C5883\+L\+\_\+\+Set\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+C5883L} $\ast$}]{hmc, }
+\item[{{\bf H\+M\+C5883\+L\+\_\+range}}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{hmc5883l_8c_abcaa47591441d63bf763990731ae7fdd}{}\label{hmc5883l_8c_abcaa47591441d63bf763990731ae7fdd}
+
+
+Sets the range of the \hyperlink{structHMC5883L}{H\+M\+C5883L}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hmc} & Pointer to an initialized \hyperlink{structHMC5883L}{H\+M\+C5883L} object \\
+\hline
+{\em range} & The desired range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on success. 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file hmc5883l.\+c.
+

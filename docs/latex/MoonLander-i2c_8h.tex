@@ -1,0 +1,182 @@
+\hypertarget{MoonLander-i2c_8h}{}\section{Moon\+Lander-\/i2c.h File Reference}
+\label{MoonLander-i2c_8h}\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+
+
+Basic polling I2C master driver for the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3ee}{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate} \{ \hyperlink{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eea9a053bd0e23847d1237ee0dfbd0af724}{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K}, 
+\hyperlink{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eeabb3ce3f508f70b572e65570bec3688d5}{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{MoonLander-i2c_8h_aa8b0b475cb2a4860cb5d6c4a13895129}{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init} (L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$i2c\+\_\+port, \hyperlink{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3ee}{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate} bitrate)
+\begin{DoxyCompactList}\small\item\em Initializes the given I2C interface at the given bitrate. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{MoonLander-i2c_8h_a198617ba51109894385bb0ee640fce3d}{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read} (L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$rx\+\_\+buffer, uint8\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Attempt to read some bytes from an I2C slave. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{MoonLander-i2c_8h_afc446bc861639e8c9fb073cad69f34d1}{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write} (L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$tx\+\_\+buffer, uint8\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Attempt to write some bytes to an I2C slave. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{MoonLander-i2c_8h_aa736d66b137e59b64d8b1b1a85c4cd8b}{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction} (L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$tx\+\_\+buffer, uint8\+\_\+t tx\+\_\+len, uint8\+\_\+t $\ast$rx\+\_\+buffer, uint8\+\_\+t rx\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Write some bytes to then immediately read some bytes from an I2C slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic polling I2C master driver for the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate@{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate}}
+\index{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate@{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+\subsubsection[{\texorpdfstring{Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate}{MoonLander_I2C_bitrate}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate}}\hypertarget{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3ee}{}\label{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3ee}
+Passed to \hyperlink{MoonLander-i2c_8h_aa8b0b475cb2a4860cb5d6c4a13895129}{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init} to set the bitrate for the I2C interface. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K@{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K@{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K}}\item[{\em 
+M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+100K\hypertarget{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eea9a053bd0e23847d1237ee0dfbd0af724}{}\label{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eea9a053bd0e23847d1237ee0dfbd0af724}
+}]100k\+Hz clock \index{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K@{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K@{M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K}}\item[{\em 
+M\+O\+O\+N\+L\+A\+N\+D\+E\+R\+\_\+\+I2\+C\+\_\+400K\hypertarget{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eeabb3ce3f508f70b572e65570bec3688d5}{}\label{MoonLander-i2c_8h_a99b692076d07b714e6b130bdc715e3eeabb3ce3f508f70b572e65570bec3688d5}
+}]400k\+Hz clock \end{description}
+\end{Desc}
+
+
+Definition at line 37 of file Moon\+Lander-\/i2c.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init}}
+\index{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+\subsubsection[{\texorpdfstring{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init(\+L\+P\+C\+\_\+\+I2\+C\+\_\+\+T $\ast$i2c\+\_\+port, Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate bitrate)}{MoonLander_I2C_Init(LPC_I2C_T *i2c_port, MoonLander_I2C_bitrate bitrate)}}]{\setlength{\rightskip}{0pt plus 5cm}void Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$}]{i2c\+\_\+port, }
+\item[{{\bf Moon\+Lander\+\_\+\+I2\+C\+\_\+bitrate}}]{bitrate}
+\end{DoxyParamCaption}
+)}\hypertarget{MoonLander-i2c_8h_aa8b0b475cb2a4860cb5d6c4a13895129}{}\label{MoonLander-i2c_8h_aa8b0b475cb2a4860cb5d6c4a13895129}
+
+
+Initializes the given I2C interface at the given bitrate. 
+
+Note the bitrate is currently set assuming that the system clock is running at 30\+M\+Hz, so other clock rates won\textquotesingle{}t result in the correct btrate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+port} & Pointer to the I2C port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Moon\+Lander-\/i2c.\+c.
+
+\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read}}
+\index{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+\subsubsection[{\texorpdfstring{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read(\+L\+P\+C\+\_\+\+I2\+C\+\_\+\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$rx\+\_\+buffer, uint8\+\_\+t len)}{MoonLander_I2C_Read(LPC_I2C_T *i2c_port, uint8_t slave_addr, uint8_t *rx_buffer, uint8_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Read (
+\begin{DoxyParamCaption}
+\item[{L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$}]{i2c\+\_\+port, }
+\item[{uint8\+\_\+t}]{slave\+\_\+addr, }
+\item[{uint8\+\_\+t $\ast$}]{rx\+\_\+buffer, }
+\item[{uint8\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{MoonLander-i2c_8h_a198617ba51109894385bb0ee640fce3d}{}\label{MoonLander-i2c_8h_a198617ba51109894385bb0ee640fce3d}
+
+
+Attempt to read some bytes from an I2C slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+port} & Pointer to the I2C port \\
+\hline
+{\em slave\+\_\+addr} & Address of I2C slave device to read from \\
+\hline
+{\em rx\+\_\+buffer} & Preinitialized buffer to place read bytes \\
+\hline
+{\em len} & Number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on successful completion of transfer. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Moon\+Lander-\/i2c.\+c.
+
+\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction}}
+\index{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+\subsubsection[{\texorpdfstring{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction(\+L\+P\+C\+\_\+\+I2\+C\+\_\+\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$tx\+\_\+buffer, uint8\+\_\+t tx\+\_\+len, uint8\+\_\+t $\ast$rx\+\_\+buffer, uint8\+\_\+t rx\+\_\+len)}{MoonLander_I2C_Transaction(LPC_I2C_T *i2c_port, uint8_t slave_addr, uint8_t *tx_buffer, uint8_t tx_len, uint8_t *rx_buffer, uint8_t rx_len)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Transaction (
+\begin{DoxyParamCaption}
+\item[{L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$}]{i2c\+\_\+port, }
+\item[{uint8\+\_\+t}]{slave\+\_\+addr, }
+\item[{uint8\+\_\+t $\ast$}]{tx\+\_\+buffer, }
+\item[{uint8\+\_\+t}]{tx\+\_\+len, }
+\item[{uint8\+\_\+t $\ast$}]{rx\+\_\+buffer, }
+\item[{uint8\+\_\+t}]{rx\+\_\+len}
+\end{DoxyParamCaption}
+)}\hypertarget{MoonLander-i2c_8h_aa736d66b137e59b64d8b1b1a85c4cd8b}{}\label{MoonLander-i2c_8h_aa736d66b137e59b64d8b1b1a85c4cd8b}
+
+
+Write some bytes to then immediately read some bytes from an I2C slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+port} & Pointer to the I2C port \\
+\hline
+{\em slave\+\_\+addr} & Address of I2C slave device \\
+\hline
+{\em tx\+\_\+buffer} & Array of bytes to write \\
+\hline
+{\em tx\+\_\+len} & Number of bytes to write \\
+\hline
+{\em rx\+\_\+buffer} & Preinitialized buffer to place read bytes \\
+\hline
+{\em tx\+\_\+len} & Number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on successful completion of transfer. 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Moon\+Lander-\/i2c.\+c.
+
+\index{Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}!Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write}}
+\index{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write@{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write}!Moon\+Lander-\/i2c.\+h@{Moon\+Lander-\/i2c.\+h}}
+\subsubsection[{\texorpdfstring{Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write(\+L\+P\+C\+\_\+\+I2\+C\+\_\+\+T $\ast$i2c\+\_\+port, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t $\ast$tx\+\_\+buffer, uint8\+\_\+t len)}{MoonLander_I2C_Write(LPC_I2C_T *i2c_port, uint8_t slave_addr, uint8_t *tx_buffer, uint8_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Moon\+Lander\+\_\+\+I2\+C\+\_\+\+Write (
+\begin{DoxyParamCaption}
+\item[{L\+P\+C\+\_\+\+I2\+C\+\_\+T $\ast$}]{i2c\+\_\+port, }
+\item[{uint8\+\_\+t}]{slave\+\_\+addr, }
+\item[{uint8\+\_\+t $\ast$}]{tx\+\_\+buffer, }
+\item[{uint8\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{MoonLander-i2c_8h_afc446bc861639e8c9fb073cad69f34d1}{}\label{MoonLander-i2c_8h_afc446bc861639e8c9fb073cad69f34d1}
+
+
+Attempt to write some bytes to an I2C slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+port} & Pointer to the I2C port \\
+\hline
+{\em slave\+\_\+addr} & Address of I2C slave device to write to \\
+\hline
+{\em tx\+\_\+buffer} & Array of bytes to write \\
+\hline
+{\em len} & Number of bytes to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero value on successful completion of transfer. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Moon\+Lander-\/i2c.\+c.
+

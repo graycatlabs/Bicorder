@@ -1,0 +1,81 @@
+\hypertarget{bicorder-compass_8h}{}\section{bicorder-\/compass.h File Reference}
+\label{bicorder-compass_8h}\index{bicorder-\/compass.\+h@{bicorder-\/compass.\+h}}
+
+
+A library for generating generic live plots on the Bicorder.  
+
+
+{\ttfamily \#include \char`\"{}gcl-\/fixedpoint.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Data\+Types.\+h\char`\"{}}\\*
+Include dependency graph for bicorder-\/compass.h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+D\+E\+C\+L\+I\+N\+A\+T\+I\+ON}~(15)\hypertarget{bicorder-compass_8h_ae36b72028ffc628f320aba81b702036d}{}\label{bicorder-compass_8h_ae36b72028ffc628f320aba81b702036d}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Compass\+\_\+direction} \{ \\*
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+N}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+N\+NE}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+NE}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+E\+NE}, 
+\\*
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+E}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+E\+SE}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+SE}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+S\+SE}, 
+\\*
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+S}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+S\+SW}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+SW}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+W\+SW}, 
+\\*
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+W}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+W\+NW}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+NW}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+N\+NW}
+ \}\hypertarget{bicorder-compass_8h_a642eb4472a57f1a847ee101e3b7af5ba}{}\label{bicorder-compass_8h_a642eb4472a57f1a847ee101e3b7af5ba}
+
+\item 
+enum {\bfseries Compass\+\_\+side} \{ {\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+L\+E\+FT}, 
+{\bfseries C\+O\+M\+P\+A\+S\+S\+\_\+\+R\+I\+G\+HT}
+ \}\hypertarget{bicorder-compass_8h_a7e36843c53aaafda9795876e659ffe7b}{}\label{bicorder-compass_8h_a7e36843c53aaafda9795876e659ffe7b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Compass\+\_\+\+Init} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass)\hypertarget{bicorder-compass_8h_a25d1189ee5127c18accd79eb68019cde}{}\label{bicorder-compass_8h_a25d1189ee5127c18accd79eb68019cde}
+
+\item 
+void {\bfseries Compass\+\_\+\+Update\+XY} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass, int\+\_\+fp x, int\+\_\+fp y)\hypertarget{bicorder-compass_8h_a3e79bc358c252d3044f23b7e0766b54f}{}\label{bicorder-compass_8h_a3e79bc358c252d3044f23b7e0766b54f}
+
+\item 
+uint16\+\_\+t {\bfseries Compass\+\_\+\+Calculate\+Heading} (\hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass)\hypertarget{bicorder-compass_8h_a0fd608a7bf9aea8112efb03a4bc9bc5f}{}\label{bicorder-compass_8h_a0fd608a7bf9aea8112efb03a4bc9bc5f}
+
+\item 
+Compass\+\_\+direction {\bfseries Compass\+\_\+\+Heading\+To\+Direction} (uint16\+\_\+t heading)\hypertarget{bicorder-compass_8h_a1051f457631ee90b4f082177cf19d469}{}\label{bicorder-compass_8h_a1051f457631ee90b4f082177cf19d469}
+
+\item 
+void {\bfseries Compass\+\_\+\+Draw} (e\+G\+F\+X\+\_\+\+Image\+Plane $\ast$image, \hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} $\ast$compass, Compass\+\_\+side side)\hypertarget{bicorder-compass_8h_a0ae721c1c17301cdf28bd0668a4f90af}{}\label{bicorder-compass_8h_a0ae721c1c17301cdf28bd0668a4f90af}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A library for generating generic live plots on the Bicorder. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}

@@ -1,0 +1,47 @@
+\hypertarget{gcl-fixedpoint_8h}{}\section{gcl-\/fixedpoint.h File Reference}
+\label{gcl-fixedpoint_8h}\index{gcl-\/fixedpoint.\+h@{gcl-\/fixedpoint.\+h}}
+
+
+Basic 32-\/ and 64-\/bit signed fixed point math library.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+Include dependency graph for gcl-\/fixedpoint.h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries F\+P\+\_\+\+F\+R\+A\+C\+T\+\_\+\+B\+I\+TS}~8\hypertarget{gcl-fixedpoint_8h_acea1385611e03f002632ed59445727a6}{}\label{gcl-fixedpoint_8h_acea1385611e03f002632ed59445727a6}
+
+\item 
+\#define {\bfseries F\+P\+\_\+\+I\+NT}(X)~((int\+\_\+fp) (X $\ast$ (1$<$$<$F\+P\+\_\+\+F\+R\+A\+C\+T\+\_\+\+B\+I\+TS)))\hypertarget{gcl-fixedpoint_8h_a130dd28a7462e0fe048250f2fc98dbb2}{}\label{gcl-fixedpoint_8h_a130dd28a7462e0fe048250f2fc98dbb2}
+
+\item 
+\#define {\bfseries F\+P\+\_\+\+L\+O\+NG}(X)~((long\+\_\+fp) (X $\ast$ (1$<$$<$F\+P\+\_\+\+F\+R\+A\+C\+T\+\_\+\+B\+I\+TS)))\hypertarget{gcl-fixedpoint_8h_a7c02c1148dd417013a6ba4bd157ddb07}{}\label{gcl-fixedpoint_8h_a7c02c1148dd417013a6ba4bd157ddb07}
+
+\item 
+\#define {\bfseries F\+P\+\_\+\+T\+O\+\_\+\+I\+NT}(X)~((int) X $\ast$ (1.\+0 / (1$<$$<$F\+P\+\_\+\+F\+R\+A\+C\+T\+\_\+\+B\+I\+TS)))\hypertarget{gcl-fixedpoint_8h_a9bcd91757487d88d69433aa7bcc01c70}{}\label{gcl-fixedpoint_8h_a9bcd91757487d88d69433aa7bcc01c70}
+
+\item 
+\#define {\bfseries F\+P\+\_\+\+T\+O\+\_\+\+F\+L\+O\+AT}(X)~(((float) X) $\ast$ (1.\+0 / (1$<$$<$F\+P\+\_\+\+F\+R\+A\+C\+T\+\_\+\+B\+I\+TS)))\hypertarget{gcl-fixedpoint_8h_a292fe0f9de86226446693772ae356f91}{}\label{gcl-fixedpoint_8h_a292fe0f9de86226446693772ae356f91}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t {\bfseries int\+\_\+fp}\hypertarget{gcl-fixedpoint_8h_aa1a10f568b12a36dbfe95583fbbbe35a}{}\label{gcl-fixedpoint_8h_aa1a10f568b12a36dbfe95583fbbbe35a}
+
+\item 
+typedef int64\+\_\+t {\bfseries long\+\_\+fp}\hypertarget{gcl-fixedpoint_8h_abd8cbe1f4521c00730f7a9931b198281}{}\label{gcl-fixedpoint_8h_abd8cbe1f4521c00730f7a9931b198281}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic 32-\/ and 64-\/bit signed fixed point math library. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}

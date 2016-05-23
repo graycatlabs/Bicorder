@@ -1,0 +1,92 @@
+\hypertarget{bicorder_8c}{}\section{bicorder.\+c File Reference}
+\label{bicorder_8c}\index{bicorder.\+c@{bicorder.\+c}}
+
+
+A Tricorder inspired project using the Gray Cat Labs Moon\+Lander.  
+
+
+{\ttfamily \#include \char`\"{}bicorder.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chip.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cr\+\_\+section\+\_\+macros.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Moon\+Lander.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Moon\+Lander-\/i2c.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Fonts/\+F\+O\+N\+T\+\_\+3\+\_\+5\+\_\+1\+B\+P\+P.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}htu21d.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hmc5883l.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gcl-\/fixedpoint.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}bicorder-\/compass.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bicorder-\/plotter.\+h\char`\"{}}\\*
+Include dependency graph for bicorder.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries gpio\+Init} (void)\hypertarget{bicorder_8c_adab76f1253da89e657056817a3a9a11a}{}\label{bicorder_8c_adab76f1253da89e657056817a3a9a11a}
+
+\item 
+void {\bfseries interrupt\+Init} (void)\hypertarget{bicorder_8c_acb72a5b72c169f53d60303e2fe328604}{}\label{bicorder_8c_acb72a5b72c169f53d60303e2fe328604}
+
+\item 
+void {\bfseries adc\+Init} (void)\hypertarget{bicorder_8c_afd645b17cf0581bcaa22c56011c775e4}{}\label{bicorder_8c_afd645b17cf0581bcaa22c56011c775e4}
+
+\item 
+void {\bfseries delayms} (uint16\+\_\+t ms)\hypertarget{bicorder_8c_a3ecb5d51db5dae1e4a0e410c3bb246ab}{}\label{bicorder_8c_a3ecb5d51db5dae1e4a0e410c3bb246ab}
+
+\item 
+void {\bfseries fill\+Screen} (e\+G\+F\+X\+\_\+\+Pixel\+State state)\hypertarget{bicorder_8c_a8b6fdb62ade7de89237a256341bb45b3}{}\label{bicorder_8c_a8b6fdb62ade7de89237a256341bb45b3}
+
+\item 
+void {\bfseries Sys\+Tick\+\_\+\+Handler} (void)\hypertarget{bicorder_8c_ab5e09814056d617c521549e542639b7e}{}\label{bicorder_8c_ab5e09814056d617c521549e542639b7e}
+
+\item 
+void {\bfseries S\+W\+\_\+\+L\+E\+F\+T\+\_\+\+I\+R\+Q\+Handler} (void)\hypertarget{bicorder_8c_a63a7e0b57db08f38c8cf4a3612c7bd3c}{}\label{bicorder_8c_a63a7e0b57db08f38c8cf4a3612c7bd3c}
+
+\item 
+void {\bfseries S\+W\+\_\+\+R\+I\+G\+H\+T\+\_\+\+I\+R\+Q\+Handler} (void)\hypertarget{bicorder_8c_af25bac4db198e708981413bb040c77f0}{}\label{bicorder_8c_af25bac4db198e708981413bb040c77f0}
+
+\item 
+void {\bfseries A\+D\+C\+\_\+\+S\+E\+Q\+A\+\_\+\+I\+R\+Q\+Handler} (void)\hypertarget{bicorder_8c_afaada093ceb1db62803ff20ed6cf96c4}{}\label{bicorder_8c_afaada093ceb1db62803ff20ed6cf96c4}
+
+\item 
+float {\bfseries get\+Range\+Centimeters} (void)\hypertarget{bicorder_8c_a0bf61f89bd59729288d59afbc7d1a02f}{}\label{bicorder_8c_a0bf61f89bd59729288d59afbc7d1a02f}
+
+\item 
+float {\bfseries get\+Range\+Inches} (void)\hypertarget{bicorder_8c_a218f56346195a635db9c44d9badcdaaa}{}\label{bicorder_8c_a218f56346195a635db9c44d9badcdaaa}
+
+\item 
+void {\bfseries go\+To\+Sleep} (void)\hypertarget{bicorder_8c_a96d82eb51fcc411bae93d32092b96501}{}\label{bicorder_8c_a96d82eb51fcc411bae93d32092b96501}
+
+\item 
+void {\bfseries wakeup} (void)\hypertarget{bicorder_8c_a99d36e6369b4349026dd99b0cee66033}{}\label{bicorder_8c_a99d36e6369b4349026dd99b0cee66033}
+
+\item 
+int {\bfseries main} (void)\hypertarget{bicorder_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\label{bicorder_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Tricorder inspired project using the Gray Cat Labs Moon\+Lander. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io}
+\end{DoxyAuthor}
+The Bicorder (not quite a Tricorder) currently has a 3-\/axis magnetometer, a relative humidity / temperature sensor and an infrared range finder. It uses a 128x32 pixel monochrome L\+CD from Newhaven, which is divided into left and right sections, each displaying one of\+:
+\begin{DoxyItemize}
+\item live plot of temperature (in Celsius)
+\item live plot of relative humidity
+\item live plot of magnetic field (Z-\/axis) in u\+Tesla
+\item a compass display (using the mag X and Y)
+\item a distance readout in cm
+\end{DoxyItemize}
+
+There\textquotesingle{}s plenty of room for improvement, such as adding an acceleromter for compass tilt compensation, switching to an ultrasonic range finder for higher accuracy and lower power, as well as just adding more sensors.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://hackaday.io/project/9176-moonlander}{\tt https\+://hackaday.\+io/project/9176-\/moonlander} 
+
+\href{https://github.com/graycatlabs/MoonLander}{\tt https\+://github.\+com/graycatlabs/\+Moon\+Lander} 
+\end{DoxySeeAlso}

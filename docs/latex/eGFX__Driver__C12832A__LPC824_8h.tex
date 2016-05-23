@@ -1,0 +1,185 @@
+\hypertarget{eGFX__Driver__C12832A__LPC824_8h}{}\section{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h File Reference}
+\label{eGFX__Driver__C12832A__LPC824_8h}\index{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h@{e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h}}
+
+
+An e\+G\+FX driver for the Newhaven Display C12832A on the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+.  
+
+
+{\ttfamily \#include \char`\"{}chip.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Data\+Types.\+h\char`\"{}}\\*
+Include dependency graph for e\+G\+F\+X\+\_\+\+Driver\+\_\+\+C12832\+A\+\_\+\+L\+P\+C824.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structC12832A__config}{C12832\+A\+\_\+config}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+A0\+\_\+\+C\+MD}~0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a879778198d22df28beb69e97836c4d17}{}\label{eGFX__Driver__C12832A__LPC824_8h_a879778198d22df28beb69e97836c4d17}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+A0\+\_\+\+D\+A\+TA}~1\hypertarget{eGFX__Driver__C12832A__LPC824_8h_afcd32a60cefc6eefe852f6241ba73590}{}\label{eGFX__Driver__C12832A__LPC824_8h_afcd32a60cefc6eefe852f6241ba73590}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+S\+P\+I\+\_\+\+B\+I\+T\+R\+A\+TE}~5000000\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a4063dd635a87638aced205ea8f87a693}{}\label{eGFX__Driver__C12832A__LPC824_8h_a4063dd635a87638aced205ea8f87a693}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+S\+P\+I\+\_\+\+C\+L\+O\+C\+K\+M\+O\+DE}~S\+P\+I\+\_\+\+C\+L\+O\+C\+K\+\_\+\+C\+P\+H\+A1\+\_\+\+C\+P\+O\+L1\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a6a3fcbfebdb675f8bd1a85563a2edda1}{}\label{eGFX__Driver__C12832A__LPC824_8h_a6a3fcbfebdb675f8bd1a85563a2edda1}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+S\+P\+I\+\_\+\+D\+A\+T\+A\+B\+I\+TS}~8\hypertarget{eGFX__Driver__C12832A__LPC824_8h_af65729df488195cfb7cd648c037a49d7}{}\label{eGFX__Driver__C12832A__LPC824_8h_af65729df488195cfb7cd648c037a49d7}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+ON}~0x\+AF\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a351c3b06bac13da63162f0425f73e225}{}\label{eGFX__Driver__C12832A__LPC824_8h_a351c3b06bac13da63162f0425f73e225}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+O\+FF}~0x\+AE\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a81fcb92b112792f9fe6adcbe2165d6ca}{}\label{eGFX__Driver__C12832A__LPC824_8h_a81fcb92b112792f9fe6adcbe2165d6ca}
+
+\item 
+\#define {\bfseries C\+M\+D\+\_\+\+S\+E\+T\+\_\+\+D\+I\+S\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+I\+NE}~0x40\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a0aadc0773d2c68985728aaeaf5242710}{}\label{eGFX__Driver__C12832A__LPC824_8h_a0aadc0773d2c68985728aaeaf5242710}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+P\+A\+GE}~0x\+B0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a6a445734feff727499d564b04335d5cb}{}\label{eGFX__Driver__C12832A__LPC824_8h_a6a445734feff727499d564b04335d5cb}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+C\+O\+L\+\_\+\+H\+I\+GH}~0x10\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a5ccce757c209da252b2d991c6c1af881}{}\label{eGFX__Driver__C12832A__LPC824_8h_a5ccce757c209da252b2d991c6c1af881}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+C\+O\+L\+\_\+\+L\+OW}~0x00\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a874cebc621f397120486af542d6514b0}{}\label{eGFX__Driver__C12832A__LPC824_8h_a874cebc621f397120486af542d6514b0}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+N\+O\+R\+M\+AL}~0x\+A0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a9cf87e5d966a565e042f7f16b8a33932}{}\label{eGFX__Driver__C12832A__LPC824_8h_a9cf87e5d966a565e042f7f16b8a33932}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+R\+E\+V\+E\+R\+SE}~0x\+A1\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ac81e88e310da329a3f53341a8084ff0a}{}\label{eGFX__Driver__C12832A__LPC824_8h_ac81e88e310da329a3f53341a8084ff0a}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+P\+\_\+\+N\+O\+R\+M\+AL}~0x\+A6\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a077d9c374ff0a5ade2c5a41b3f13d873}{}\label{eGFX__Driver__C12832A__LPC824_8h_a077d9c374ff0a5ade2c5a41b3f13d873}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+D\+I\+S\+P\+\_\+\+R\+E\+V\+E\+R\+SE}~0x\+A7\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a28e0e80af11cf88cc46508e7b3c5fa8e}{}\label{eGFX__Driver__C12832A__LPC824_8h_a28e0e80af11cf88cc46508e7b3c5fa8e}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+A\+L\+L\+P\+T\+S\+\_\+\+N\+O\+R\+M\+AL}~0x\+A4\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a7e425fa84ad7dc04af591c21825d27da}{}\label{eGFX__Driver__C12832A__LPC824_8h_a7e425fa84ad7dc04af591c21825d27da}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+A\+L\+L\+P\+T\+S\+\_\+\+ON}~0x\+A5\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a9ac31aa0b78793693a644bd15b556e60}{}\label{eGFX__Driver__C12832A__LPC824_8h_a9ac31aa0b78793693a644bd15b556e60}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+9}~0x\+A2\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a2073c3f57d8735594931bb75af5ff409}{}\label{eGFX__Driver__C12832A__LPC824_8h_a2073c3f57d8735594931bb75af5ff409}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+7}~0x\+A3\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a138baba3a8e84b42ffdca8cf75079859}{}\label{eGFX__Driver__C12832A__LPC824_8h_a138baba3a8e84b42ffdca8cf75079859}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+R\+MW}~0x\+E0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a8ce7a8689185ab3b21bf61ac83636ffb}{}\label{eGFX__Driver__C12832A__LPC824_8h_a8ce7a8689185ab3b21bf61ac83636ffb}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+R\+M\+W\+\_\+\+C\+L\+E\+AR}~0x\+EE\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a15638ea4c178e12e895cc9f11da9b397}{}\label{eGFX__Driver__C12832A__LPC824_8h_a15638ea4c178e12e895cc9f11da9b397}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+R\+E\+S\+ET}~0x\+E2\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a4c3af6610eb1e356496c78d273276ec6}{}\label{eGFX__Driver__C12832A__LPC824_8h_a4c3af6610eb1e356496c78d273276ec6}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+C\+O\+M\+\_\+\+N\+O\+R\+M\+AL}~0x\+C0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a4155a840445aca25550f36bc0d3cfbd3}{}\label{eGFX__Driver__C12832A__LPC824_8h_a4155a840445aca25550f36bc0d3cfbd3}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+C\+O\+M\+\_\+\+R\+E\+V\+E\+R\+SE}~0x\+C8\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a0d9c4a0ed2c77875df6896220b48f467}{}\label{eGFX__Driver__C12832A__LPC824_8h_a0d9c4a0ed2c77875df6896220b48f467}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+O\+N\+T\+R\+OL}~0x28\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ab9cfe7d310fb91791890879ea8c9b3eb}{}\label{eGFX__Driver__C12832A__LPC824_8h_ab9cfe7d310fb91791890879ea8c9b3eb}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+I\+S\+T\+O\+R\+\_\+\+R\+A\+T\+IO}~0x20\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a5991bb734bde3bf536a92e0bc1d56651}{}\label{eGFX__Driver__C12832A__LPC824_8h_a5991bb734bde3bf536a92e0bc1d56651}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+V\+O\+L\+U\+M\+E\+\_\+\+F\+I\+R\+ST}~0x81\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a753446328ae92b47bc1001bfadb86628}{}\label{eGFX__Driver__C12832A__LPC824_8h_a753446328ae92b47bc1001bfadb86628}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+V\+O\+L\+U\+M\+E\+\_\+\+S\+E\+C\+O\+ND}~0x00\hypertarget{eGFX__Driver__C12832A__LPC824_8h_abcc3c18118a365f2efaa4ea330301dc0}{}\label{eGFX__Driver__C12832A__LPC824_8h_abcc3c18118a365f2efaa4ea330301dc0}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+O\+FF}~0x\+AC\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a45675fe54fb8f53241ea2095838685e2}{}\label{eGFX__Driver__C12832A__LPC824_8h_a45675fe54fb8f53241ea2095838685e2}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+ON}~0x\+AD\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ac881b621ef12c3a36baed9d474dd24b8}{}\label{eGFX__Driver__C12832A__LPC824_8h_ac881b621ef12c3a36baed9d474dd24b8}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+R\+EG}~0x00\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a89985f3aa35e8b8710ac794c9b3dc88d}{}\label{eGFX__Driver__C12832A__LPC824_8h_a89985f3aa35e8b8710ac794c9b3dc88d}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+O\+O\+S\+T\+E\+R\+\_\+\+F\+I\+R\+ST}~0x\+F8\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a19ec3ae8acd3b7f3c49b6969dcac8e85}{}\label{eGFX__Driver__C12832A__LPC824_8h_a19ec3ae8acd3b7f3c49b6969dcac8e85}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+O\+O\+S\+T\+E\+R\+\_\+234}~0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ae648b285f82424e5f69eabded82f898f}{}\label{eGFX__Driver__C12832A__LPC824_8h_ae648b285f82424e5f69eabded82f898f}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+O\+O\+S\+T\+E\+R\+\_\+5}~1\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a99b6c6138513f75206aa5a506e1fd120}{}\label{eGFX__Driver__C12832A__LPC824_8h_a99b6c6138513f75206aa5a506e1fd120}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+B\+O\+O\+S\+T\+E\+R\+\_\+6}~3\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a00573d42c82a73963b9bffe4ac336fff}{}\label{eGFX__Driver__C12832A__LPC824_8h_a00573d42c82a73963b9bffe4ac336fff}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+N\+OP}~0x\+E3\hypertarget{eGFX__Driver__C12832A__LPC824_8h_af32dc633a3f92545cddb34710c94a4ff}{}\label{eGFX__Driver__C12832A__LPC824_8h_af32dc633a3f92545cddb34710c94a4ff}
+
+\item 
+\#define {\bfseries C12832\+A\+\_\+\+C\+M\+D\+\_\+\+T\+E\+ST}~0x\+F0\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a71b953b8edc35bda51ff97982f7c32fd}{}\label{eGFX__Driver__C12832A__LPC824_8h_a71b953b8edc35bda51ff97982f7c32fd}
+
+\item 
+\#define {\bfseries e\+G\+F\+X\+\_\+\+P\+H\+Y\+S\+I\+C\+A\+L\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+S\+I\+Z\+E\+\_\+X}~((uint16\+\_\+t) 128)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a1f75d3041762148eee8db1c627bb08e6}{}\label{eGFX__Driver__C12832A__LPC824_8h_a1f75d3041762148eee8db1c627bb08e6}
+
+\item 
+\#define {\bfseries e\+G\+F\+X\+\_\+\+P\+H\+Y\+S\+I\+C\+A\+L\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+S\+I\+Z\+E\+\_\+Y}~((uint16\+\_\+t) 32)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ad3e233992797c152e42578715ea5dd47}{}\label{eGFX__Driver__C12832A__LPC824_8h_ad3e233992797c152e42578715ea5dd47}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries delayms} (uint16\+\_\+t ms)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a3ecb5d51db5dae1e4a0e410c3bb246ab}{}\label{eGFX__Driver__C12832A__LPC824_8h_a3ecb5d51db5dae1e4a0e410c3bb246ab}
+
+\item 
+void {\bfseries C12832\+A\+\_\+write\+Command} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t command)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a7be63d7001bd75e9db1a1857c67b05f4}{}\label{eGFX__Driver__C12832A__LPC824_8h_a7be63d7001bd75e9db1a1857c67b05f4}
+
+\item 
+void {\bfseries C12832\+A\+\_\+write\+Data} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t data)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a5159f50c89913db67162645b32f1ab4c}{}\label{eGFX__Driver__C12832A__LPC824_8h_a5159f50c89913db67162645b32f1ab4c}
+
+\item 
+void {\bfseries C12832\+A\+\_\+set\+Page\+Address} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t page)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a094e974af0ad7ae69ccc6e616453a4dc}{}\label{eGFX__Driver__C12832A__LPC824_8h_a094e974af0ad7ae69ccc6e616453a4dc}
+
+\item 
+void {\bfseries C12832\+A\+\_\+set\+Column\+Address} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t column)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_ac2d0d175a567a23a8cee7325d6ccfbf4}{}\label{eGFX__Driver__C12832A__LPC824_8h_ac2d0d175a567a23a8cee7325d6ccfbf4}
+
+\item 
+void {\bfseries C12832\+A\+\_\+\+Configure\+S\+PI} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a2612e59e8504dd2ef05e611ce557bdd0}{}\label{eGFX__Driver__C12832A__LPC824_8h_a2612e59e8504dd2ef05e611ce557bdd0}
+
+\item 
+void {\bfseries C12832\+A\+\_\+\+Init} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, L\+P\+C\+\_\+\+S\+P\+I\+\_\+T $\ast$lpc\+\_\+spi, uint8\+\_\+t a0\+\_\+pin, uint8\+\_\+t rst\+\_\+pin, uint8\+\_\+t ssel\+\_\+num)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a15172167a2183c38ef7c3f3de652f2df}{}\label{eGFX__Driver__C12832A__LPC824_8h_a15172167a2183c38ef7c3f3de652f2df}
+
+\item 
+void {\bfseries C12832\+A\+\_\+\+Set\+Contrast} (\hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen, uint8\+\_\+t brightness)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a2bbde366fb27de2048af59cb5593200c}{}\label{eGFX__Driver__C12832A__LPC824_8h_a2bbde366fb27de2048af59cb5593200c}
+
+\item 
+void {\bfseries e\+G\+F\+X\+\_\+\+Init\+Driver} ()\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a24c7d9ac123071415be1c93f7b3b0f17}{}\label{eGFX__Driver__C12832A__LPC824_8h_a24c7d9ac123071415be1c93f7b3b0f17}
+
+\item 
+void {\bfseries e\+G\+F\+X\+\_\+\+Dump} (e\+G\+F\+X\+\_\+\+Image\+Plane $\ast$Image, \hyperlink{structC12832A__config}{C12832\+A\+\_\+config} $\ast$screen)\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a07007ba5b20622de129f0d96f8d4893d}{}\label{eGFX__Driver__C12832A__LPC824_8h_a07007ba5b20622de129f0d96f8d4893d}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+e\+G\+F\+X\+\_\+\+Image\+Plane {\bfseries e\+G\+F\+X\+\_\+\+Back\+Buffer}\hypertarget{eGFX__Driver__C12832A__LPC824_8h_a3687479ac9e398c2b42e30a3f45e7ba2}{}\label{eGFX__Driver__C12832A__LPC824_8h_a3687479ac9e398c2b42e30a3f45e7ba2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An e\+G\+FX driver for the Newhaven Display C12832A on the N\+XP L\+P\+C824 (and probably other L\+P\+C8\+XX) A\+RM Cortex-\/\+M0+. 
+
+\begin{DoxyAuthor}{Author}
+Alex Hiam -\/ \href{mailto:alex@graycat.io}{\tt alex@graycat.\+io} 
+\end{DoxyAuthor}
