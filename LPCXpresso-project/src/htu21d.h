@@ -21,7 +21,7 @@
  ******************************************************************************/
 
 /**
- * @file htu21d.c
+ * @file htu21d.h
  * @author Alex Hiam - <alex@graycat.io>
  *
  * @brief A library for the HMC5883L 3-axis I2C magnetometer.

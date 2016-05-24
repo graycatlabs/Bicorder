@@ -83,7 +83,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">bicorder.c File Reference</div>  </div>
 </div><!--header-->
@@ -94,12 +95,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="bicorder_8h_source.html">bicorder.h</a>&quot;</code><br />
 <code>#include &quot;chip.h&quot;</code><br />
 <code>#include &lt;cr_section_macros.h&gt;</code><br />
-<code>#include &quot;MoonLander.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="MoonLander_8h_source.html">MoonLander.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="MoonLander-i2c_8h_source.html">MoonLander-i2c.h</a>&quot;</code><br />
 <code>#include &quot;eGFX.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="eGFX__Driver__C12832A__LPC824_8h_source.html">eGFX_Driver_C12832A_LPC824.h</a>&quot;</code><br />
 <code>#include &quot;Fonts/FONT_3_5_1BPP.h&quot;</code><br />
-<code>#include &quot;htu21d.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="htu21d_8h_source.html">htu21d.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hmc5883l_8h_source.html">hmc5883l.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
@@ -117,22 +118,26 @@ Include dependency graph for bicorder.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adab76f1253da89e657056817a3a9a11a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adab76f1253da89e657056817a3a9a11a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gpioInit</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#adab76f1253da89e657056817a3a9a11a">gpioInit</a> (void)</td></tr>
+<tr class="memdesc:adab76f1253da89e657056817a3a9a11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO initialization. <br /></td></tr>
 <tr class="separator:adab76f1253da89e657056817a3a9a11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb72a5b72c169f53d60303e2fe328604"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb72a5b72c169f53d60303e2fe328604"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>interruptInit</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#acb72a5b72c169f53d60303e2fe328604">interruptInit</a> (void)</td></tr>
+<tr class="memdesc:acb72a5b72c169f53d60303e2fe328604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt initialization,. <br /></td></tr>
 <tr class="separator:acb72a5b72c169f53d60303e2fe328604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd645b17cf0581bcaa22c56011c775e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd645b17cf0581bcaa22c56011c775e4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>adcInit</b> (void)</td></tr>
+<tr class="memitem:afd645b17cf0581bcaa22c56011c775e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#afd645b17cf0581bcaa22c56011c775e4">adcInit</a> (void)</td></tr>
+<tr class="memdesc:afd645b17cf0581bcaa22c56011c775e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC initialization.  <a href="#afd645b17cf0581bcaa22c56011c775e4">More...</a><br /></td></tr>
 <tr class="separator:afd645b17cf0581bcaa22c56011c775e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ecb5d51db5dae1e4a0e410c3bb246ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ecb5d51db5dae1e4a0e410c3bb246ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>delayms</b> (uint16_t ms)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a3ecb5d51db5dae1e4a0e410c3bb246ab">delayms</a> (uint16_t ms)</td></tr>
+<tr class="memdesc:a3ecb5d51db5dae1e4a0e410c3bb246ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the given number of milliseconds. <br /></td></tr>
 <tr class="separator:a3ecb5d51db5dae1e4a0e410c3bb246ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6fdb62ade7de89237a256341bb45b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b6fdb62ade7de89237a256341bb45b3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fillScreen</b> (eGFX_PixelState state)</td></tr>
+<tr class="memitem:a8b6fdb62ade7de89237a256341bb45b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a8b6fdb62ade7de89237a256341bb45b3">fillScreen</a> (eGFX_PixelState state)</td></tr>
+<tr class="memdesc:a8b6fdb62ade7de89237a256341bb45b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the eGFX backbuffer with the given #eGFX_PixelState.  <a href="#a8b6fdb62ade7de89237a256341bb45b3">More...</a><br /></td></tr>
 <tr class="separator:a8b6fdb62ade7de89237a256341bb45b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5e09814056d617c521549e542639b7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5e09814056d617c521549e542639b7e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SysTick_Handler</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#ab5e09814056d617c521549e542639b7e">SysTick_Handler</a> (void)</td></tr>
+<tr class="memdesc:ab5e09814056d617c521549e542639b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for the systick timer; increments counters, etc. <br /></td></tr>
 <tr class="separator:ab5e09814056d617c521549e542639b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63a7e0b57db08f38c8cf4a3612c7bd3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63a7e0b57db08f38c8cf4a3612c7bd3c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SW_LEFT_IRQHandler</b> (void)</td></tr>
@@ -144,20 +149,84 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SW_RIGHT_IRQHandler</
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_SEQA_IRQHandler</b> (void)</td></tr>
 <tr class="separator:afaada093ceb1db62803ff20ed6cf96c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf61f89bd59729288d59afbc7d1a02f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf61f89bd59729288d59afbc7d1a02f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getRangeCentimeters</b> (void)</td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a0bf61f89bd59729288d59afbc7d1a02f">getRangeCentimeters</a> (void)</td></tr>
+<tr class="memdesc:a0bf61f89bd59729288d59afbc7d1a02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current measured range in centimeters. <br /></td></tr>
 <tr class="separator:a0bf61f89bd59729288d59afbc7d1a02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a218f56346195a635db9c44d9badcdaaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a218f56346195a635db9c44d9badcdaaa"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getRangeInches</b> (void)</td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a218f56346195a635db9c44d9badcdaaa">getRangeInches</a> (void)</td></tr>
+<tr class="memdesc:a218f56346195a635db9c44d9badcdaaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current measured range in inches. <br /></td></tr>
 <tr class="separator:a218f56346195a635db9c44d9badcdaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96d82eb51fcc411bae93d32092b96501"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96d82eb51fcc411bae93d32092b96501"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>goToSleep</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a96d82eb51fcc411bae93d32092b96501">goToSleep</a> (void)</td></tr>
+<tr class="memdesc:a96d82eb51fcc411bae93d32092b96501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters sleep state until pinint signal received. <br /></td></tr>
 <tr class="separator:a96d82eb51fcc411bae93d32092b96501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d36e6369b4349026dd99b0cee66033"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99d36e6369b4349026dd99b0cee66033"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>wakeup</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bicorder_8c.html#a99d36e6369b4349026dd99b0cee66033">wakeup</a> (void)</td></tr>
+<tr class="memdesc:a99d36e6369b4349026dd99b0cee66033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon waking from sleep to re-enable clocks, etc. <br /></td></tr>
 <tr class="separator:a99d36e6369b4349026dd99b0cee66033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a840291bc02cba5474a4cb46a9b9566fe"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad54be9924e125dc848b2db01283adb81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad54be9924e125dc848b2db01283adb81"></a>
+static <a class="el" href="structC12832A__config.html">C12832A_config</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_C12832A</b></td></tr>
+<tr class="separator:ad54be9924e125dc848b2db01283adb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f536414bb79d7715cc7a4ffe3dfa38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47f536414bb79d7715cc7a4ffe3dfa38"></a>
+static <a class="el" href="structHTU21D.html">HTU21D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_HTU21D</b></td></tr>
+<tr class="separator:a47f536414bb79d7715cc7a4ffe3dfa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec16c5a6796bdfb30b51a8af83a174b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec16c5a6796bdfb30b51a8af83a174b9"></a>
+static <a class="el" href="structHMC5883L.html">HMC5883L</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_HMC5883L</b></td></tr>
+<tr class="separator:aec16c5a6796bdfb30b51a8af83a174b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc78f0f59722c4df530242fb3ab1d55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accc78f0f59722c4df530242fb3ab1d55"></a>
+static volatile <a class="el" href="structuCorder__plot.html">uCorder_plot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_plot_temp</b></td></tr>
+<tr class="separator:accc78f0f59722c4df530242fb3ab1d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217ca8056ad81fe317749c3c3e63ba0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a217ca8056ad81fe317749c3c3e63ba0c"></a>
+static volatile <a class="el" href="structuCorder__plot.html">uCorder_plot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_plot_rh</b></td></tr>
+<tr class="separator:a217ca8056ad81fe317749c3c3e63ba0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f51d77de4741463ef6d0ea57edaa0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81f51d77de4741463ef6d0ea57edaa0f"></a>
+static volatile <a class="el" href="structuCorder__Compass.html">uCorder_Compass</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_compass</b></td></tr>
+<tr class="separator:a81f51d77de4741463ef6d0ea57edaa0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1a9a565db3a8d1334a6586e702c404"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f1a9a565db3a8d1334a6586e702c404"></a>
+static volatile <a class="el" href="structuCorder__plot.html">uCorder_plot</a>&#160;</td><td class="memItemRight" valign="bottom"><b>g_plot_mag</b></td></tr>
+<tr class="separator:a3f1a9a565db3a8d1334a6586e702c404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafef37b0cce3451df9b9d1c9e16a786c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafef37b0cce3451df9b9d1c9e16a786c"></a>
+static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_delayms_counter</b></td></tr>
+<tr class="separator:aafef37b0cce3451df9b9d1c9e16a786c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6595d48640188402842c76906189fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e6595d48640188402842c76906189fe"></a>
+static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_millis_counter</b></td></tr>
+<tr class="separator:a5e6595d48640188402842c76906189fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecdbc8d62dc544149c3c6603947abdc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afecdbc8d62dc544149c3c6603947abdc"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_adc_sample_ready</b> = 0</td></tr>
+<tr class="separator:afecdbc8d62dc544149c3c6603947abdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d248441491a635c07f6d03f50a8ff85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d248441491a635c07f6d03f50a8ff85"></a>
+static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_range_raw</b> = 0</td></tr>
+<tr class="separator:a9d248441491a635c07f6d03f50a8ff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31135c909beeb10e9717e4ad097da218"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31135c909beeb10e9717e4ad097da218"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_left_display</b> = DISPLAY_TEMP</td></tr>
+<tr class="separator:a31135c909beeb10e9717e4ad097da218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af790bcc50f37599b4a81203cd444e91a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af790bcc50f37599b4a81203cd444e91a"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_right_display</b> = DISPLAY_RH</td></tr>
+<tr class="separator:af790bcc50f37599b4a81203cd444e91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b43e42754dcb25b5404295de247ce59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b43e42754dcb25b5404295de247ce59"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_sw_left_debouncing</b> = 0</td></tr>
+<tr class="separator:a4b43e42754dcb25b5404295de247ce59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19f7da65976699643e49a6d93278ff4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af19f7da65976699643e49a6d93278ff4"></a>
+static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_sw_left_debounce_counter</b></td></tr>
+<tr class="separator:af19f7da65976699643e49a6d93278ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8241f6a19cd11caf6d060b61c2de88b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8241f6a19cd11caf6d060b61c2de88b2"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_sw_right_debouncing</b> = 0</td></tr>
+<tr class="separator:a8241f6a19cd11caf6d060b61c2de88b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a972e3ccde2c1a6b6b795f6e8633287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a972e3ccde2c1a6b6b795f6e8633287"></a>
+static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_sw_right_debounce_counter</b></td></tr>
+<tr class="separator:a5a972e3ccde2c1a6b6b795f6e8633287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca19eee1be26639eb2ace99b02c0d8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaca19eee1be26639eb2ace99b02c0d8e"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_go_to_sleep</b></td></tr>
+<tr class="separator:aaca19eee1be26639eb2ace99b02c0d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5c527285aae7b32ea545d2a972b218"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f5c527285aae7b32ea545d2a972b218"></a>
+static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>g_ignore_switches</b></td></tr>
+<tr class="separator:a1f5c527285aae7b32ea545d2a972b218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A Tricorder inspired project using the Gray Cat Labs MoonLander. </p>
@@ -175,10 +244,58 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></
 <a href="https://github.com/graycatlabs/MoonLander">https://github.com/graycatlabs/MoonLander</a> </dd></dl>
 
 <p>Definition in file <a class="el" href="bicorder_8c_source.html">bicorder.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="afd645b17cf0581bcaa22c56011c775e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adcInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC initialization. </p>
+<p>Enables ADC and sets up the sequencer for single sample on the range finder ADC input. </p>
+
+<p>Definition at line <a class="el" href="bicorder_8c_source.html#l00141">141</a> of file <a class="el" href="bicorder_8c_source.html">bicorder.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b6fdb62ade7de89237a256341bb45b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fillScreen </td>
+          <td>(</td>
+          <td class="paramtype">eGFX_PixelState&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fills the eGFX backbuffer with the given #eGFX_PixelState. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Pixel state to set all pixels to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="bicorder_8c_source.html#l00190">190</a> of file <a class="el" href="bicorder_8c_source.html">bicorder.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 23 2016 14:09:23 for BICORDER by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 23 2016 22:30:53 for BICORDER by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

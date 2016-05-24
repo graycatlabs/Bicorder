@@ -24,7 +24,7 @@
  * @file bicorder-compass.c
  * @author Alex Hiam - <alex@graycat.io>
  *
- * @brief A library for generating generic live plots on the Bicorder.
+ * @brief A library for generating a compass display on the Bicorder.
  */
 
 #include "bicorder-compass.h"

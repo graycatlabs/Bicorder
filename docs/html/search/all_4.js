@@ -1,26 +1,5 @@
 var searchData=
 [
-  ['hmc5883l',['HMC5883L',['../structHMC5883L.html',1,'']]],
-  ['hmc5883l_2ec',['hmc5883l.c',['../hmc5883l_8c.html',1,'']]],
-  ['hmc5883l_2eh',['hmc5883l.h',['../hmc5883l_8h.html',1,'']]],
-  ['hmc5883l_5fgetxyz',['HMC5883L_GetXYZ',['../hmc5883l_8c.html#a35725553949d7a5a7cb449a1ffb1a03c',1,'HMC5883L_GetXYZ(HMC5883L *hmc, int_fp *x, int_fp *y, int_fp *z):&#160;hmc5883l.c'],['../hmc5883l_8h.html#aa552169787e94e46b16f288daffcdd1b',1,'HMC5883L_GetXYZ(HMC5883L *hmc, int32_t *x, int32_t *y, int32_t *z):&#160;hmc5883l.c']]],
-  ['hmc5883l_5finit',['HMC5883L_Init',['../hmc5883l_8c.html#a24b3cc080b91995fb1b3c837253f3a68',1,'HMC5883L_Init(HMC5883L *hmc, LPC_I2C_T *i2c):&#160;hmc5883l.c'],['../hmc5883l_8h.html#a24b3cc080b91995fb1b3c837253f3a68',1,'HMC5883L_Init(HMC5883L *hmc, LPC_I2C_T *i2c):&#160;hmc5883l.c']]],
-  ['hmc5883l_5frange',['HMC5883L_range',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffe',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f0_5f88',['HMC5883L_RANGE_0_88',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffeabd4f734a5ed9eaeb580e4afcb63890ec',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f1_5f3',['HMC5883L_RANGE_1_3',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffea4a077e3c33798b4295f243c8b0b9d764',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f1_5f9',['HMC5883L_RANGE_1_9',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffead0c3045e1f34aff68a3cea460851989d',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f2_5f5',['HMC5883L_RANGE_2_5',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffeae183e113b72ab434c9d9403f00763f55',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f4_5f0',['HMC5883L_RANGE_4_0',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffea3ae84c300b41fdb0db4ab882e42e67f2',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f4_5f7',['HMC5883L_RANGE_4_7',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffea3c28e19815ebafe08e3e445ad733a441',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f5_5f6',['HMC5883L_RANGE_5_6',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffeaffdc8235da08a2592866e28e9773bea6',1,'hmc5883l.h']]],
-  ['hmc5883l_5frange_5f8_5f1',['HMC5883L_RANGE_8_1',['../hmc5883l_8h.html#a741d6341bd7d31bf60ea406397fd4ffeadbf91e7a1603328bc96bb58499717dbd',1,'hmc5883l.h']]],
-  ['hmc5883l_5freadregister',['HMC5883L_ReadRegister',['../hmc5883l_8h.html#a0ffff13a0392be66d29d2ebc4dc9eead',1,'hmc5883l.h']]],
-  ['hmc5883l_5freadregisters',['HMC5883L_ReadRegisters',['../hmc5883l_8h.html#aa88f4c99f95e2cf1f9bed6793bc62f21',1,'hmc5883l.h']]],
-  ['hmc5883l_5fsetrange',['HMC5883L_SetRange',['../hmc5883l_8c.html#abcaa47591441d63bf763990731ae7fdd',1,'HMC5883L_SetRange(HMC5883L *hmc, HMC5883L_range range):&#160;hmc5883l.c'],['../hmc5883l_8h.html#abcaa47591441d63bf763990731ae7fdd',1,'HMC5883L_SetRange(HMC5883L *hmc, HMC5883L_range range):&#160;hmc5883l.c']]],
-  ['hmc5883l_5fwriteregister',['HMC5883L_WriteRegister',['../hmc5883l_8h.html#a3416195149bb5ec812e5d2e89ee98865',1,'hmc5883l.h']]],
-  ['htu21d',['HTU21D',['../structHTU21D.html',1,'']]],
-  ['htu21d_2ec',['htu21d.c',['../htu21d_8c.html',1,'']]],
-  ['htu21d_5fgetrh',['HTU21D_GetRH',['../htu21d_8c.html#abbf5873958a7120799455b4e3588c8e4',1,'htu21d.c']]],
-  ['htu21d_5fgettemp',['HTU21D_GetTemp',['../htu21d_8c.html#af108e3929cf8898a97160f067c7a757c',1,'htu21d.c']]],
-  ['htu21d_5finit',['HTU21D_Init',['../htu21d_8c.html#ad2b266b90dad1b2b70a80504314a1941',1,'htu21d.c']]]
+  ['egfx_5fdriver_5fc12832a_5flpc824_2ec',['eGFX_Driver_C12832A_LPC824.c',['../eGFX__Driver__C12832A__LPC824_8c.html',1,'']]],
+  ['egfx_5fdriver_5fc12832a_5flpc824_2eh',['eGFX_Driver_C12832A_LPC824.h',['../eGFX__Driver__C12832A__LPC824_8h.html',1,'']]]
 ];

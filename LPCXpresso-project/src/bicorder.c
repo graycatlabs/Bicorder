@@ -95,6 +95,9 @@ static volatile uint16_t g_sw_right_debounce_counter;
 static volatile uint8_t g_go_to_sleep;
 static volatile uint8_t g_ignore_switches;
 
+/**
+ * @brief GPIO initialization.
+ */
 void gpioInit(void) {
     //Chip_GPIO_Init(LPC_GPIO_PORT);
 	Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, 0, LCD_BACKLIGHT);
@@ -110,6 +113,9 @@ void gpioInit(void) {
 	Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, 0, SW_RIGHT);
 }
 
+/**
+ * @brief Interrupt initialization,
+ */
 void interruptInit(void) {
 	Chip_SYSCTL_SetPinInterrupt(0, SW_LEFT);
 	Chip_SYSCTL_SetPinInterrupt(1, SW_RIGHT);
@@ -126,6 +132,12 @@ void interruptInit(void) {
 	NVIC_EnableIRQ(SW_RIGHT_IRQn);
 }
 
+/**
+ * @brief ADC initialization.
+ *
+ * Enables ADC and sets up the sequencer for single sample on the range
+ * finder ADC input.
+ */
 void adcInit(void) {
 	/* Setup ADC for 12-bit mode and normal power */
 	Chip_ADC_Init(LPC_ADC, 0);
@@ -162,41 +174,19 @@ void adcInit(void) {
 	Chip_ADC_EnableSequencer(LPC_ADC, ADC_SEQA_IDX);
 }
 
-/* Moved this to sysinit to save some space in flash
-void StuckI2CHack(void) {
-	uint8_t i;
-	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_SWM);
-	Chip_SWM_DisableFixedPin(SWM_FIXED_I2C0_SCL);
-
-
-	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
-
-	Chip_IOCON_PinSetI2CMode(LPC_IOCON, IOCON_PIO10, PIN_I2CMODE_GPIO);
-
-	Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, 0, MoonLander_IO_SCL);
-	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 1);
-
-	for (i=0; i<32; i++) {
-		Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 0);
-		Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 1);
-	}
-
-	Chip_IOCON_PinSetI2CMode(LPC_IOCON, IOCON_PIO10, PIN_I2CMODE_FASTPLUS);
-
-	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_IOCON);
-
-	Chip_SWM_EnableFixedPin(SWM_FIXED_I2C0_SCL);
-
-	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_SWM);
-}
-*/
-
-// Wait for the given number of milliseconds.
+/**
+ * @brief Wait for the given number of milliseconds.
+ */
 void delayms(uint16_t ms) {
 	g_delayms_counter = 0;
 	while(((uint16_t)g_delayms_counter) < ms) {};
 }
 
+/**
+ * @brief Fills the eGFX backbuffer with the given #eGFX_PixelState.
+ *
+ * @param state Pixel state to set all pixels to
+ */
 void fillScreen(eGFX_PixelState state) {
 	eGFX_Point pointa = {0, 0};
 	eGFX_Point pointb = {eGFX_BackBuffer.SizeX - 1, eGFX_BackBuffer.SizeY - 1};
@@ -204,6 +194,9 @@ void fillScreen(eGFX_PixelState state) {
 	eGFX_DrawFilledBox(&eGFX_BackBuffer, &box, state);
 }
 
+/**
+ * @brief Handler for the systick timer; increments counters, etc.
+ */
 void SysTick_Handler(void) {
 	//static uint32_t blink_counter = 0;
 	static uint32_t sample_counter_temp = 0;
@@ -220,12 +213,6 @@ void SysTick_Handler(void) {
 	static uint8_t right_sw_engaged = 0;
 
 	g_delayms_counter += MS_PER_TICK;
-
-	//blink_counter += MS_PER_TICK;
-	//if (blink_counter >= BLINK_PERIOD_MS/2) {
-	//	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT, 0, MoonLander_LED);
-	//	blink_counter = 0;
-	//}
 
 	sample_counter_temp++;
 	if (sample_counter_temp > SAMPLE_PERIOD_TEMP) {
@@ -247,7 +234,6 @@ void SysTick_Handler(void) {
 		Compass_UpdateXY(&g_compass, mag_x, -mag_y);
 		sample_counter_mag = 0;
 	}
-
 
 	sample_counter_range++;
 	if (sample_counter_range > SAMPLE_PERIOD_RANGE) {
@@ -274,7 +260,6 @@ void SysTick_Handler(void) {
 			}
 		}
 	}
-
 
 	if (right_sw_engaged) {
 		if (Chip_GPIO_GetPinState(LPC_GPIO_PORT, 0, SW_RIGHT)) {
@@ -362,7 +347,9 @@ void ADC_SEQA_IRQHandler(void)
 	Chip_ADC_ClearFlags(LPC_ADC, pending);
 }
 
-
+/**
+ * @brief Retrieves the current measured range in centimeters.
+ */
 float getRangeCentimeters(void) {
 	float v_range;
 	v_range = ADC_V_PER_LSB * g_range_raw;
@@ -370,12 +357,17 @@ float getRangeCentimeters(void) {
 	return 61.681 * pow(v_range, -1.133);
 }
 
-
+/**
+ * @brief Retrieves the current measured range in inches.
+ */
 float getRangeInches(void) {
 	return getRangeCentimeters() / 2.54;
 }
 
 
+/**
+ * @brief Enters sleep state until pinint signal received.
+ */
 void goToSleep(void) {
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, LCD_BACKLIGHT, 1);
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, RANGE_POWER_PIN, 0);
@@ -395,6 +387,9 @@ void goToSleep(void) {
 	Chip_PMU_SleepState(LPC_PMU);
 }
 
+/**
+ * @brief Called upon waking from sleep to re-enable clocks, etc.
+ */
 void wakeup(void) {
 	Chip_SYSCTL_DisablePINTWakeup(SW_LEFT_PININT);
 	Chip_SYSCTL_DisablePINTWakeup(SW_RIGHT_PININT);

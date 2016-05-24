@@ -41,33 +41,57 @@ typedef int64_t long_fp;
 #endif
 
 // int to fixed point conversions
-#define FP_INT(X) ((int_fp) (X * (1<<FP_FRACT_BITS)))
-#define FP_LONG(X) ((long_fp) (X * (1<<FP_FRACT_BITS)))
+#define FP_INT(X) ((int_fp) (X * (1<<FP_FRACT_BITS))
+#define FP_LONG(X) ((long_fp) (X * (1<<FP_FRACT_BITS))) ///<
 
 // Fixed point to int & float conversions
 #define FP_TO_INT(X) ((int) X * (1.0 / (1<<FP_FRACT_BITS)))
 #define FP_TO_FLOAT(X) (((float) X) * (1.0 / (1<<FP_FRACT_BITS)))
 
-// 64-bit fixed point multiplication
+/**
+ * @brief 64-bit fixed point multiplication of two #long_fp numbers
+ *
+ * @return Returns the #long_fp product of the given two numbers
+ */
 static inline long_fp long_fp_mul(long_fp a, long_fp b) {
 	return (a * b) >> FP_FRACT_BITS;
 }
 
-// 64-bit fixed point division
+/**
+ * @brief 64-bit fixed point division of two #long_fp numbers
+ *
+ * @param a The dividend
+ * @param a The divisor
+ *
+ * @return Returns the #long_fp quotient of the given two numbers
+ */
 static inline long_fp long_fp_div(long_fp a, long_fp b) {
 	return (a << FP_FRACT_BITS) / b;
 }
 
-// 32-bit fixed point multiplication. Uses 64-bit multiplication for
-// Intermediate steps, so as long as the result fits in 32 bits there
-// shouldn't be any overflow
+/**
+ * @brief 32-bit fixed point multiplication of two #int_fp numbers
+ *
+ * Uses 64-bit multiplication for intermediate steps, so as long as the
+ * result fits in 32 bits there shouldn't be any overflow
+ *
+ * @return Returns the #int_fp product of the given two numbers
+ */
 static inline int_fp int_fp_mul(int_fp a, int_fp b) {
 	return (int_fp) long_fp_mul((long_fp) a, (long_fp) b);
 }
 
-// 32-bit fixed point division. Uses 64-bit multiplication for
-// Intermediate steps, so as long as the result fits in 32 bits there
-// shouldn't be any overflow
+/**
+ * @brief 32-bit fixed point division of two #int_fp numbers
+ *
+ * Uses 64-bit operations for intermediate steps, so as long as the
+ * result fits in 32 bits there shouldn't be any overflow
+ *
+ * @param a The dividend
+ * @param a The divisor
+ *
+ * @return Returns the #int_fp quotient of the given two numbers
+ */
 static inline int_fp int_fp_div(int_fp a, int_fp b) {
 	return (int_fp) long_fp_div((long_fp) a, (long_fp) b);
 }

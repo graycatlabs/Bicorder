@@ -24,7 +24,7 @@
  * @file bicorder-compass.h
  * @author Alex Hiam - <alex@graycat.io>
  *
- * @brief A library for generating generic live plots on the Bicorder.
+ * @brief A library for generating a compass display on the Bicorder.
  */
 
 
@@ -38,17 +38,44 @@
 //#define COMPASS_DECLINATION (-15) // VT
 #define COMPASS_DECLINATION (15) // San Fran
 
+
+/**
+ * Compass object
+ */
 typedef struct {
 	int_fp mag_x;
 	int_fp mag_y;
 } uCorder_Compass;
 
+/**
+ * @brief Initializes the given compass object
+ *
+ * @param compass The #uCorder_Compass object to initialize
+ */
 void Compass_Init(uCorder_Compass *compass);
 
+/**
+ * @brief Sets the current X and Y magnetic field strength of the given
+ *        compass object
+ *
+ * @param compass An initialized #uCorder_Compass object
+ * @param x The current X axis field strength
+ * @param y The current Y axis field strength
+ */
 void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y);
 
+/**
+ * @brief Calculates and returns the current compass heading in degrees
+ *
+ * @param compass An initialized #uCorder_Compass object
+ *
+ * @return Returns the current heading in degrees
+ */
 uint16_t Compass_CalculateHeading(uCorder_Compass *compass);
 
+/**
+ * Compass headings as returned by #Compass_HeadingToDirection
+ */
 typedef enum {
 	COMPASS_N,
 	COMPASS_NNE,
@@ -67,13 +94,31 @@ typedef enum {
 	COMPASS_NW,
 	COMPASS_NNW
 } Compass_direction;
+
+/**
+ * @brief Returns the current compass direction from the given heading,
+ *
+ * @param heading Heading in degrees
+ *
+ * @return Returns a compass direction.
+ */
 Compass_direction Compass_HeadingToDirection(uint16_t heading);
 
-
+/**
+ * Passed to #Compass_Draw to set which side of screen compass is displayed on
+ */
 typedef enum {
-	COMPASS_LEFT,
-	COMPASS_RIGHT
+	COMPASS_LEFT, ///< Display compass on left side of screen
+	COMPASS_RIGHT ///< Display compass on right side of screen
 } Compass_side;
+
+/**
+ * @brief Returns the current compass direction from the given heading,
+ *
+ * @param heading Heading in degrees
+ *
+ * @return Returns a compass direction.
+ */
 void Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass,
 				  Compass_side side);
 
