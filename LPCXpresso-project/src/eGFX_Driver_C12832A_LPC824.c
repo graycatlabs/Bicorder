@@ -161,12 +161,12 @@ void C12832A_SetContrast(C12832A_config *screen, uint8_t contrast) {
 	C12832A_writeCommand(screen, C12832A_CMD_VOLUME_SECOND | (contrast & 0x3f));
 }
 
-extern void	eGFX_InitDriver() {
+void eGFX_InitDriver() {
 	eGFX_ImagePlaneInit(&eGFX_BackBuffer, &BackBufferStore[0], eGFX_PHYSICAL_SCREEN_SIZE_X,
 							eGFX_PHYSICAL_SCREEN_SIZE_Y, eGFX_IMAGE_PLANE_1BPP);
 }
 
-extern void	eGFX_Dump(eGFX_ImagePlane *Image, C12832A_config *screen) {
+void eGFX_Dump(eGFX_ImagePlane *Image, C12832A_config *screen) {
 	SPI_DATA_SETUP_T xfer;
 	uint32_t offset;
 	uint16_t tx[128];

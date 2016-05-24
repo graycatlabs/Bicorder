@@ -58,6 +58,10 @@ void Compass_Init(uCorder_Compass *compass);
  * @brief Sets the current X and Y magnetic field strength of the given
  *        compass object
  *
+ * Fixed point values are used for the field strength because this routine
+ * was meant to be called from an interrupt handler. In
+ * #Compass_CalculateHeading they are converted to floats for the calculation.
+ *
  * @param compass An initialized #uCorder_Compass object
  * @param x The current X axis field strength
  * @param y The current Y axis field strength
@@ -67,6 +71,9 @@ void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y);
 /**
  * @brief Calculates and returns the current compass heading in degrees
  *
+ * This involves floating point calculations, so it shouldn't be called from
+ * an interrup handler.
+ *
  * @param compass An initialized #uCorder_Compass object
  *
  * @return Returns the current heading in degrees
@@ -74,7 +81,7 @@ void Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y);
 uint16_t Compass_CalculateHeading(uCorder_Compass *compass);
 
 /**
- * Compass headings as returned by #Compass_HeadingToDirection
+ * Compass directions as returned by #Compass_HeadingToDirection
  */
 typedef enum {
 	COMPASS_N,
@@ -96,7 +103,7 @@ typedef enum {
 } Compass_direction;
 
 /**
- * @brief Returns the current compass direction from the given heading,
+ * @brief Returns the current compass direction from the given heading.
  *
  * @param heading Heading in degrees
  *

@@ -32,20 +32,39 @@
 
 #include <stdint.h>
 
-// 32- and 64-bit fixed point types
-typedef int32_t int_fp;
-typedef int64_t long_fp;
+typedef int32_t int_fp;  ///< 32-bit fixed point number
+typedef int64_t long_fp; ///< 64-bit fixed point number
 
+/**
+ * Number of bits used to store the fraction. Defaults to 8, but can
+ * be changed using gcc's -D flag (e.g. `-DFP_FRACT_BITS=10`)
+ */
 #ifndef FP_FRACT_BITS
 #define FP_FRACT_BITS 8
 #endif
 
-// int to fixed point conversions
-#define FP_INT(X) ((int_fp) (X * (1<<FP_FRACT_BITS))
-#define FP_LONG(X) ((long_fp) (X * (1<<FP_FRACT_BITS))) ///<
+/**
+ * convert an int to a 32-bit #int_fp
+ */
+#define FP_INT(X) ((int_fp) (X * (1<<FP_FRACT_BITS)))
+/**
+ * convert an int to a 64-bit #long_fp
+ */
+#define FP_LONG(X) ((long_fp) (X * (1<<FP_FRACT_BITS)))
 
-// Fixed point to int & float conversions
-#define FP_TO_INT(X) ((int) X * (1.0 / (1<<FP_FRACT_BITS)))
+/**
+ * convert an #int_fp from fixed point to a 32-bit int
+ */
+#define FP_TO_INT(X) ((int32_t) X * (1.0 / (1<<FP_FRACT_BITS)))
+
+/**
+ * convert an #int_fp from fixed point to a 64-bit int
+ */
+#define FP_TO_LONG(X) ((int64_t) X * (1.0 / (1<<FP_FRACT_BITS)))
+
+/**
+ * convert an #int_fp from fixed point to a float
+ */
 #define FP_TO_FLOAT(X) (((float) X) * (1.0 / (1<<FP_FRACT_BITS)))
 
 /**

@@ -10,6 +10,8 @@ I put this project together for the OSH Park Bring A Hack meetup at the 2016 Bay
  * a compass display (using the mag X and Y)
  * a distance readout in cm
 
+I kept it pretty well sectioned into separate libraries, some of which could certainly be reused in other projects. You can find all the source on [Github](https://github.com/graycatlabs/Bicorder).
+
 ## License
 
 Released under the MIT license.

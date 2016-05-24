@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['long_5ffp_5fdiv',['long_fp_div',['../gcl-fixedpoint_8h.html#ab5f92bb60e66fda1d36981c1df6563ea',1,'gcl-fixedpoint.h']]],
-  ['long_5ffp_5fmul',['long_fp_mul',['../gcl-fixedpoint_8h.html#ad45629d9a653818caf57b313d4a8d7c3',1,'gcl-fixedpoint.h']]]
+  ['int_5ffp_5fdiv',['int_fp_div',['../gcl-fixedpoint_8h.html#ac7b70a1b6980b5da47e896f5d97ee8a2',1,'gcl-fixedpoint.h']]],
+  ['int_5ffp_5fmul',['int_fp_mul',['../gcl-fixedpoint_8h.html#aae0a3c76fcea84dc584a115420a9466b',1,'gcl-fixedpoint.h']]],
+  ['interruptinit',['interruptInit',['../bicorder_8c.html#acb72a5b72c169f53d60303e2fe328604',1,'bicorder.c']]]
 ];

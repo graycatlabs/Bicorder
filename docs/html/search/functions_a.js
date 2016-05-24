@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wakeup',['wakeup',['../bicorder_8c.html#a99d36e6369b4349026dd99b0cee66033',1,'bicorder.c']]]
+  ['systick_5fhandler',['SysTick_Handler',['../bicorder_8c.html#ab5e09814056d617c521549e542639b7e',1,'bicorder.c']]]
 ];

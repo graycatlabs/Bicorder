@@ -26,6 +26,8 @@
  *
  * @brief An eGFX driver for the Newhaven Display C12832A on the NXP LPC824
  * (and probably other LPC8XX) ARM Cortex-M0+.
+ *
+ * @see The eGFX library: https://github.com/ehughes/eGFX
  */
 
 #ifndef EGFX_DRIVER_C12832A_LPC824_H_
@@ -81,6 +83,9 @@
 #define C12832A_CMD_TEST           0xF0
 
 
+/**
+ * The C12832A object
+ */
 typedef struct {
 	LPC_SPI_T *lpc_spi;
 	uint8_t a0_pin;
@@ -88,46 +93,100 @@ typedef struct {
 	uint8_t ssel_num;
 } C12832A_config;
 
-//LCD GFX Driver Configuration.
+// LCD GFX Driver Configuration.
 // The Symbols below must be defined for the GFX library to work.
-
 #define eGFX_PHYSICAL_SCREEN_SIZE_X	((uint16_t) 128)
 #define eGFX_PHYSICAL_SCREEN_SIZE_Y	((uint16_t) 32)
 
+// This driver requires the user to define a routine for blocking delays
 extern void delayms(uint16_t ms);
 
-// Puts the given screen into command mode and writes the given byte
+/**
+ * @brief Writes a command to the screen
+ *
+ * @param screen An initialized #C12832A_config object
+ * @param command The command byte to write
+ */
 void C12832A_writeCommand(C12832A_config *screen, uint8_t command);
 
-// Puts the given screen into data mode and writes the given byte
+/**
+ * @brief Writes a byte of data to the screen
+ *
+ * @param screen An initialized #C12832A_config object
+ * @param data The data byte to write
+ */
 void C12832A_writeData(C12832A_config *screen, uint8_t data);
 
-//Sets the current page address in the LCD's RAM
+/**
+ * @brief Sets the current page address in the LCD's RAM
+ *
+ * @param screen An initialized #C12832A_config object
+ * @param page The desired page address
+ */
 void C12832A_setPageAddress(C12832A_config *screen, uint8_t page);
 
-//Sets the current column address in the LCD's RAM
+/**
+ * @brief Sets the current column address in the LCD's RAM
+ *
+ * @param screen An initialized #C12832A_config object
+ * @param column The desired column address
+ */
 void C12832A_setColumnAddress(C12832A_config *screen, uint8_t column);
 
-// Sets the given (already initialized) C12832A_config object's SPI to the
-// appropriate mode and clock rate. This is automatically called
-// by C12832A_Init(), but can come in handy if the C12832A is sharing the
-// bus with devices that require different SPI configurations.
+/**
+ * @brief Sets the SPI port's settings per the C12832A's requirements
+ *
+ * This is automatically called by #C12832A_Init, but can come in handy if
+ * the C12832A is sharing the bus with devices that require different SPI
+ * configurations.
+ *
+ * @param screen An initialized #C12832A_config object
+ */
 void C12832A_ConfigureSPI(C12832A_config *screen);
 
-// Initializes the C12832A on the given SPI port with the given GPIO pins. Once
-// this function returns, the given C12832A_config object will be initialized
-// and ready to pass to the other functions.
+
+/**
+ * @brief Initializes the C12832A
+ *
+ * this function returns, the given C12832A_config object will be initialized
+ * and ready to pass to the other functions.
+ *
+ * @param screen A #C12832A_config object
+ * @param lpc_spi The SPI port the screen is connected to
+ * @param a0_pin The GPIO pin connected to the screen's A0 input
+ * @param rst_pin The GPIO pin connected to the screen's reset input
+ * @param ssel_num Which of the SPI port's SSEL signals to use for the screen
+ */
 void C12832A_Init(C12832A_config *screen, LPC_SPI_T *lpc_spi, uint8_t a0_pin,
 				  uint8_t rst_pin, uint8_t ssel_num);
 
-void C12832A_SetContrast(C12832A_config *screen, uint8_t brightness);
+/**
+ * @brief Set's the screen's contrast
+ *
+ * @param screen An initialized #C12832A_config object
+ * @param contrast The desired contrast (0-63)
+ */
+void C12832A_SetContrast(C12832A_config *screen, uint8_t contrast);
 
-//These are the prototypes for the GFX HAL
-extern void	eGFX_InitDriver();
-extern void	eGFX_Dump(eGFX_ImagePlane *Image, C12832A_config *screen);
+/**
+ * @brief Initializes the eGFX driver
+ *
+ * Must be called before using eGFX with this driver
+ */
+void eGFX_InitDriver();
 
-//A Driver *Must* have a backbuffer exposed
-extern eGFX_ImagePlane eGFX_BackBuffer;
+/**
+ * @brief Sends the backbuffer to the screen
+ *
+ * @param Image The eGFX backbuffer object
+ * @param screen An initialized #C12832A_config object
+ */
+void eGFX_Dump(eGFX_ImagePlane *Image, C12832A_config *screen);
+
+/**
+ * The eGFX backbuffer used by this driver
+ */
+eGFX_ImagePlane eGFX_BackBuffer;
 
 
 #endif /* EGFX_DRIVER_C12832A_LPC824_H_ */

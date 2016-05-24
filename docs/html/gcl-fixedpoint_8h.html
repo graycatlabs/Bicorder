@@ -98,8 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Include dependency graph for gcl-fixedpoint.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="gcl-fixedpoint_8h__incl.png" border="0" usemap="#gcl-fixedpoint_8h" alt=""/></div>
-<map name="gcl-fixedpoint_8h" id="gcl-fixedpoint_8h">
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -107,6 +105,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="gcl-fixedpoint_8h__dep__incl.png" border="0" usemap="#gcl-fixedpoint_8hdep" alt=""/></div>
 <map name="gcl-fixedpoint_8hdep" id="gcl-fixedpoint_8hdep">
 <area shape="rect" id="node2" href="bicorder-compass_8h.html" title="A library for generating a compass display on the Bicorder. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="bicorder_8c.html" title="A Tricorder inspired project using the Gray Cat Labs MoonLander. " alt="" coords="86,155,165,181"/>
 </map>
 </div>
 </div>
@@ -114,44 +113,43 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:acea1385611e03f002632ed59445727a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acea1385611e03f002632ed59445727a6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FP_FRACT_BITS</b>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:acea1385611e03f002632ed59445727a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:acea1385611e03f002632ed59445727a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a130dd28a7462e0fe048250f2fc98dbb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a130dd28a7462e0fe048250f2fc98dbb2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FP_INT</b>(X)&#160;&#160;&#160;((int_fp) (X * (1&lt;&lt;FP_FRACT_BITS))</td></tr>
+<tr class="memitem:a130dd28a7462e0fe048250f2fc98dbb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#a130dd28a7462e0fe048250f2fc98dbb2">FP_INT</a>(X)&#160;&#160;&#160;((<a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>) (X * (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td></tr>
 <tr class="separator:a130dd28a7462e0fe048250f2fc98dbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c02c1148dd417013a6ba4bd157ddb07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c02c1148dd417013a6ba4bd157ddb07"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FP_LONG</b>(X)&#160;&#160;&#160;((long_fp) (X * (1&lt;&lt;FP_FRACT_BITS)))</td></tr>
+<tr class="memitem:a7c02c1148dd417013a6ba4bd157ddb07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#a7c02c1148dd417013a6ba4bd157ddb07">FP_LONG</a>(X)&#160;&#160;&#160;((<a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>) (X * (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td></tr>
 <tr class="separator:a7c02c1148dd417013a6ba4bd157ddb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bcd91757487d88d69433aa7bcc01c70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bcd91757487d88d69433aa7bcc01c70"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FP_TO_INT</b>(X)&#160;&#160;&#160;((int) X * (1.0 / (1&lt;&lt;FP_FRACT_BITS)))</td></tr>
+<tr class="memitem:a9bcd91757487d88d69433aa7bcc01c70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#a9bcd91757487d88d69433aa7bcc01c70">FP_TO_INT</a>(X)&#160;&#160;&#160;((int32_t) X * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td></tr>
 <tr class="separator:a9bcd91757487d88d69433aa7bcc01c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292fe0f9de86226446693772ae356f91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a292fe0f9de86226446693772ae356f91"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FP_TO_FLOAT</b>(X)&#160;&#160;&#160;(((float) X) * (1.0 / (1&lt;&lt;FP_FRACT_BITS)))</td></tr>
+<tr class="memitem:a620942fe70b0ecb65300d3684def87c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#a620942fe70b0ecb65300d3684def87c7">FP_TO_LONG</a>(X)&#160;&#160;&#160;((int64_t) X * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td></tr>
+<tr class="separator:a620942fe70b0ecb65300d3684def87c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292fe0f9de86226446693772ae356f91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#a292fe0f9de86226446693772ae356f91">FP_TO_FLOAT</a>(X)&#160;&#160;&#160;(((float) X) * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td></tr>
 <tr class="separator:a292fe0f9de86226446693772ae356f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aa1a10f568b12a36dbfe95583fbbbe35a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1a10f568b12a36dbfe95583fbbbe35a"></a>
-typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>int_fp</b></td></tr>
+typedef int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a></td></tr>
+<tr class="memdesc:aa1a10f568b12a36dbfe95583fbbbe35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit fixed point number <br /></td></tr>
 <tr class="separator:aa1a10f568b12a36dbfe95583fbbbe35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8cbe1f4521c00730f7a9931b198281"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd8cbe1f4521c00730f7a9931b198281"></a>
-typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>long_fp</b></td></tr>
+typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a></td></tr>
+<tr class="memdesc:abd8cbe1f4521c00730f7a9931b198281"><td class="mdescLeft">&#160;</td><td class="mdescRight">64-bit fixed point number <br /></td></tr>
 <tr class="separator:abd8cbe1f4521c00730f7a9931b198281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad45629d9a653818caf57b313d4a8d7c3"><td class="memItemLeft" align="right" valign="top">static long_fp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ad45629d9a653818caf57b313d4a8d7c3">long_fp_mul</a> (long_fp a, long_fp b)</td></tr>
-<tr class="memdesc:ad45629d9a653818caf57b313d4a8d7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">64-bit fixed point multiplication of two #long_fp numbers  <a href="#ad45629d9a653818caf57b313d4a8d7c3">More...</a><br /></td></tr>
+<tr class="memitem:ad45629d9a653818caf57b313d4a8d7c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ad45629d9a653818caf57b313d4a8d7c3">long_fp_mul</a> (<a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> a, <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> b)</td></tr>
+<tr class="memdesc:ad45629d9a653818caf57b313d4a8d7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">64-bit fixed point multiplication of two <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> numbers  <a href="#ad45629d9a653818caf57b313d4a8d7c3">More...</a><br /></td></tr>
 <tr class="separator:ad45629d9a653818caf57b313d4a8d7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f92bb60e66fda1d36981c1df6563ea"><td class="memItemLeft" align="right" valign="top">static long_fp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ab5f92bb60e66fda1d36981c1df6563ea">long_fp_div</a> (long_fp a, long_fp b)</td></tr>
-<tr class="memdesc:ab5f92bb60e66fda1d36981c1df6563ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">64-bit fixed point division of two #long_fp numbers  <a href="#ab5f92bb60e66fda1d36981c1df6563ea">More...</a><br /></td></tr>
+<tr class="memitem:ab5f92bb60e66fda1d36981c1df6563ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ab5f92bb60e66fda1d36981c1df6563ea">long_fp_div</a> (<a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> a, <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> b)</td></tr>
+<tr class="memdesc:ab5f92bb60e66fda1d36981c1df6563ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">64-bit fixed point division of two <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> numbers  <a href="#ab5f92bb60e66fda1d36981c1df6563ea">More...</a><br /></td></tr>
 <tr class="separator:ab5f92bb60e66fda1d36981c1df6563ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae0a3c76fcea84dc584a115420a9466b"><td class="memItemLeft" align="right" valign="top">static int_fp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#aae0a3c76fcea84dc584a115420a9466b">int_fp_mul</a> (int_fp a, int_fp b)</td></tr>
-<tr class="memdesc:aae0a3c76fcea84dc584a115420a9466b"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit fixed point multiplication of two #int_fp numbers  <a href="#aae0a3c76fcea84dc584a115420a9466b">More...</a><br /></td></tr>
+<tr class="memitem:aae0a3c76fcea84dc584a115420a9466b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#aae0a3c76fcea84dc584a115420a9466b">int_fp_mul</a> (<a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> a, <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> b)</td></tr>
+<tr class="memdesc:aae0a3c76fcea84dc584a115420a9466b"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit fixed point multiplication of two <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> numbers  <a href="#aae0a3c76fcea84dc584a115420a9466b">More...</a><br /></td></tr>
 <tr class="separator:aae0a3c76fcea84dc584a115420a9466b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b70a1b6980b5da47e896f5d97ee8a2"><td class="memItemLeft" align="right" valign="top">static int_fp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ac7b70a1b6980b5da47e896f5d97ee8a2">int_fp_div</a> (int_fp a, int_fp b)</td></tr>
-<tr class="memdesc:ac7b70a1b6980b5da47e896f5d97ee8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit fixed point division of two #int_fp numbers  <a href="#ac7b70a1b6980b5da47e896f5d97ee8a2">More...</a><br /></td></tr>
+<tr class="memitem:ac7b70a1b6980b5da47e896f5d97ee8a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gcl-fixedpoint_8h.html#ac7b70a1b6980b5da47e896f5d97ee8a2">int_fp_div</a> (<a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> a, <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> b)</td></tr>
+<tr class="memdesc:ac7b70a1b6980b5da47e896f5d97ee8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-bit fixed point division of two <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> numbers  <a href="#ac7b70a1b6980b5da47e896f5d97ee8a2">More...</a><br /></td></tr>
 <tr class="separator:ac7b70a1b6980b5da47e896f5d97ee8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -159,7 +157,118 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Alex Hiam - <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'x@'+'gra'+'yc'+'at.'+'io'; return false;">alex@<span style="display: none;">.nosp@m.</span>gray<span style="display: none;">.nosp@m.</span>cat.i<span style="display: none;">.nosp@m.</span>o</a> </dd></dl>
 
 <p>Definition in file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="acea1385611e03f002632ed59445727a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_FRACT_BITS&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of bits used to store the fraction. Defaults to 8, but can be changed using gcc's -D flag (e.g. <code>-DFP_FRACT_BITS=10</code>) </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00043">43</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a130dd28a7462e0fe048250f2fc98dbb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_INT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>) (X * (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert an int to a 32-bit <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00049">49</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c02c1148dd417013a6ba4bd157ddb07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_LONG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>) (X * (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert an int to a 64-bit <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00053">53</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a292fe0f9de86226446693772ae356f91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_TO_FLOAT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;(((float) X) * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert an <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> from fixed point to a float </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00068">68</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bcd91757487d88d69433aa7bcc01c70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_TO_INT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((int32_t) X * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert an <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> from fixed point to a 32-bit int </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00058">58</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a620942fe70b0ecb65300d3684def87c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FP_TO_LONG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;((int64_t) X * (1.0 / (1&lt;&lt;<a class="el" href="gcl-fixedpoint_8h.html#acea1385611e03f002632ed59445727a6">FP_FRACT_BITS</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>convert an <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> from fixed point to a 64-bit int </p>
+
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00063">63</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ac7b70a1b6980b5da47e896f5d97ee8a2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,15 +277,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int_fp int_fp_div </td>
+          <td class="memname">static <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> int_fp_div </td>
           <td>(</td>
-          <td class="paramtype">int_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -192,7 +301,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>32-bit fixed point division of two #int_fp numbers </p>
+<p>32-bit fixed point division of two <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> numbers </p>
 <p>Uses 64-bit operations for intermediate steps, so as long as the result fits in 32 bits there shouldn't be any overflow</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -201,9 +310,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the #int_fp quotient of the given two numbers </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> quotient of the given two numbers </dd></dl>
 
-<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00095">95</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00114">114</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
 
 </div>
 </div>
@@ -215,15 +324,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int_fp int_fp_mul </td>
+          <td class="memname">static <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a> int_fp_mul </td>
           <td>(</td>
-          <td class="paramtype">int_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a">int_fp</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -239,11 +348,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>32-bit fixed point multiplication of two #int_fp numbers </p>
+<p>32-bit fixed point multiplication of two <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> numbers </p>
 <p>Uses 64-bit multiplication for intermediate steps, so as long as the result fits in 32 bits there shouldn't be any overflow</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the #int_fp product of the given two numbers </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="gcl-fixedpoint_8h.html#aa1a10f568b12a36dbfe95583fbbbe35a" title="32-bit fixed point number ">int_fp</a> product of the given two numbers </dd></dl>
 
-<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00080">80</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00099">99</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
 
 </div>
 </div>
@@ -255,15 +364,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static long_fp long_fp_div </td>
+          <td class="memname">static <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> long_fp_div </td>
           <td>(</td>
-          <td class="paramtype">long_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">long_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -279,7 +388,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>64-bit fixed point division of two #long_fp numbers </p>
+<p>64-bit fixed point division of two <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> numbers </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>The dividend </td></tr>
@@ -287,9 +396,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the #long_fp quotient of the given two numbers </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> quotient of the given two numbers </dd></dl>
 
-<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00068">68</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00087">87</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
 
 </div>
 </div>
@@ -301,15 +410,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static long_fp long_fp_mul </td>
+          <td class="memname">static <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a> long_fp_mul </td>
           <td>(</td>
-          <td class="paramtype">long_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">long_fp&#160;</td>
+          <td class="paramtype"><a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281">long_fp</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -325,17 +434,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>64-bit fixed point multiplication of two #long_fp numbers </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the #long_fp product of the given two numbers </dd></dl>
+<p>64-bit fixed point multiplication of two <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> numbers </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="gcl-fixedpoint_8h.html#abd8cbe1f4521c00730f7a9931b198281" title="64-bit fixed point number ">long_fp</a> product of the given two numbers </dd></dl>
 
-<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00056">56</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
+<p>Definition at line <a class="el" href="gcl-fixedpoint_8h_source.html#l00075">75</a> of file <a class="el" href="gcl-fixedpoint_8h_source.html">gcl-fixedpoint.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 24 2016 10:36:38 for BICORDER by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 24 2016 11:45:45 for BICORDER by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

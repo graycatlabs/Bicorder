@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['hmc5883l_5fgetxyz',['HMC5883L_GetXYZ',['../hmc5883l_8h.html#aa552169787e94e46b16f288daffcdd1b',1,'hmc5883l.h']]],
-  ['hmc5883l_5finit',['HMC5883L_Init',['../hmc5883l_8h.html#a24b3cc080b91995fb1b3c837253f3a68',1,'hmc5883l.h']]],
-  ['hmc5883l_5freadregister',['HMC5883L_ReadRegister',['../hmc5883l_8h.html#a0ffff13a0392be66d29d2ebc4dc9eead',1,'hmc5883l.h']]],
-  ['hmc5883l_5freadregisters',['HMC5883L_ReadRegisters',['../hmc5883l_8h.html#aa88f4c99f95e2cf1f9bed6793bc62f21',1,'hmc5883l.h']]],
-  ['hmc5883l_5fsetrange',['HMC5883L_SetRange',['../hmc5883l_8h.html#abcaa47591441d63bf763990731ae7fdd',1,'hmc5883l.h']]],
-  ['hmc5883l_5fwriteregister',['HMC5883L_WriteRegister',['../hmc5883l_8h.html#a3416195149bb5ec812e5d2e89ee98865',1,'hmc5883l.h']]],
-  ['htu21d_5fgetrh',['HTU21D_GetRH',['../htu21d_8h.html#abbf5873958a7120799455b4e3588c8e4',1,'htu21d.h']]],
-  ['htu21d_5fgettemp',['HTU21D_GetTemp',['../htu21d_8h.html#af108e3929cf8898a97160f067c7a757c',1,'htu21d.h']]],
-  ['htu21d_5finit',['HTU21D_Init',['../htu21d_8h.html#ad2b266b90dad1b2b70a80504314a1941',1,'htu21d.h']]]
+  ['c12832a_5fconfigurespi',['C12832A_ConfigureSPI',['../eGFX__Driver__C12832A__LPC824_8h.html#a2612e59e8504dd2ef05e611ce557bdd0',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5finit',['C12832A_Init',['../eGFX__Driver__C12832A__LPC824_8h.html#a15172167a2183c38ef7c3f3de652f2df',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5fsetcolumnaddress',['C12832A_setColumnAddress',['../eGFX__Driver__C12832A__LPC824_8h.html#ac2d0d175a567a23a8cee7325d6ccfbf4',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5fsetcontrast',['C12832A_SetContrast',['../eGFX__Driver__C12832A__LPC824_8h.html#a31bc01450c074e81ee6136dae6a058fa',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5fsetpageaddress',['C12832A_setPageAddress',['../eGFX__Driver__C12832A__LPC824_8h.html#a094e974af0ad7ae69ccc6e616453a4dc',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5fwritecommand',['C12832A_writeCommand',['../eGFX__Driver__C12832A__LPC824_8h.html#a7be63d7001bd75e9db1a1857c67b05f4',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['c12832a_5fwritedata',['C12832A_writeData',['../eGFX__Driver__C12832A__LPC824_8h.html#a5159f50c89913db67162645b32f1ab4c',1,'eGFX_Driver_C12832A_LPC824.h']]],
+  ['compass_5fcalculateheading',['Compass_CalculateHeading',['../bicorder-compass_8h.html#a0fd608a7bf9aea8112efb03a4bc9bc5f',1,'bicorder-compass.h']]],
+  ['compass_5fdraw',['Compass_Draw',['../bicorder-compass_8h.html#a0ae721c1c17301cdf28bd0668a4f90af',1,'bicorder-compass.h']]],
+  ['compass_5fheadingtodirection',['Compass_HeadingToDirection',['../bicorder-compass_8h.html#a1051f457631ee90b4f082177cf19d469',1,'bicorder-compass.h']]],
+  ['compass_5finit',['Compass_Init',['../bicorder-compass_8h.html#a25d1189ee5127c18accd79eb68019cde',1,'bicorder-compass.h']]],
+  ['compass_5fupdatexy',['Compass_UpdateXY',['../bicorder-compass_8h.html#a3e79bc358c252d3044f23b7e0766b54f',1,'bicorder-compass.h']]]
 ];
