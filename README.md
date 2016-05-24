@@ -12,6 +12,8 @@ I put this project together for the OSH Park Bring A Hack meetup at the 2016 Bay
 
 I kept it pretty well sectioned into separate libraries, some of which could certainly be reused in other projects. You can find all the source on [Github](https://github.com/graycatlabs/Bicorder).
 
+It's based on the Gray Cat Labs [MoonLander](https://hackaday.io/project/9176-moonlander).
+
 ## License
 
 Released under the MIT license.

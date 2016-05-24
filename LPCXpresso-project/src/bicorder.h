@@ -27,7 +27,7 @@
  * @brief Config header for the Gray Cat Labs Bicorder.
  */
 
-#ifndef BICORDER_H__
+#ifndef BICORDER_H_
 #define BICORDER_H_
 
 #include "MoonLander.h"
@@ -97,4 +97,4 @@ typedef enum {
 	N_DISPLAYS
 } uCorder_display;
 
-#endif /BICORDER_H__H_ */
+#endif /* BICORDER_H_ */
