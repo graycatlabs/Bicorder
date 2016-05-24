@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['compass_5fcalculateheading',['Compass_CalculateHeading',['../bicorder-compass_8c.html#a0fd608a7bf9aea8112efb03a4bc9bc5f',1,'Compass_CalculateHeading(uCorder_Compass *compass):&#160;bicorder-compass.c'],['../bicorder-compass_8h.html#a0fd608a7bf9aea8112efb03a4bc9bc5f',1,'Compass_CalculateHeading(uCorder_Compass *compass):&#160;bicorder-compass.c']]],
-  ['compass_5fdraw',['Compass_Draw',['../bicorder-compass_8c.html#a0ae721c1c17301cdf28bd0668a4f90af',1,'Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass, Compass_side side):&#160;bicorder-compass.c'],['../bicorder-compass_8h.html#a0ae721c1c17301cdf28bd0668a4f90af',1,'Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass, Compass_side side):&#160;bicorder-compass.c']]],
-  ['compass_5fheadingtodirection',['Compass_HeadingToDirection',['../bicorder-compass_8c.html#a1051f457631ee90b4f082177cf19d469',1,'Compass_HeadingToDirection(uint16_t heading):&#160;bicorder-compass.c'],['../bicorder-compass_8h.html#a1051f457631ee90b4f082177cf19d469',1,'Compass_HeadingToDirection(uint16_t heading):&#160;bicorder-compass.c']]],
-  ['compass_5finit',['Compass_Init',['../bicorder-compass_8c.html#a25d1189ee5127c18accd79eb68019cde',1,'Compass_Init(uCorder_Compass *compass):&#160;bicorder-compass.c'],['../bicorder-compass_8h.html#a25d1189ee5127c18accd79eb68019cde',1,'Compass_Init(uCorder_Compass *compass):&#160;bicorder-compass.c']]],
-  ['compass_5fupdatexy',['Compass_UpdateXY',['../bicorder-compass_8c.html#a3e79bc358c252d3044f23b7e0766b54f',1,'Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y):&#160;bicorder-compass.c'],['../bicorder-compass_8h.html#a3e79bc358c252d3044f23b7e0766b54f',1,'Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y):&#160;bicorder-compass.c']]]
+  ['hmc5883l_5fgetxyz',['HMC5883L_GetXYZ',['../hmc5883l_8h.html#aa552169787e94e46b16f288daffcdd1b',1,'hmc5883l.h']]],
+  ['hmc5883l_5finit',['HMC5883L_Init',['../hmc5883l_8h.html#a24b3cc080b91995fb1b3c837253f3a68',1,'hmc5883l.h']]],
+  ['hmc5883l_5freadregister',['HMC5883L_ReadRegister',['../hmc5883l_8h.html#a0ffff13a0392be66d29d2ebc4dc9eead',1,'hmc5883l.h']]],
+  ['hmc5883l_5freadregisters',['HMC5883L_ReadRegisters',['../hmc5883l_8h.html#aa88f4c99f95e2cf1f9bed6793bc62f21',1,'hmc5883l.h']]],
+  ['hmc5883l_5fsetrange',['HMC5883L_SetRange',['../hmc5883l_8h.html#abcaa47591441d63bf763990731ae7fdd',1,'hmc5883l.h']]],
+  ['hmc5883l_5fwriteregister',['HMC5883L_WriteRegister',['../hmc5883l_8h.html#a3416195149bb5ec812e5d2e89ee98865',1,'hmc5883l.h']]],
+  ['htu21d_5fgetrh',['HTU21D_GetRH',['../htu21d_8h.html#abbf5873958a7120799455b4e3588c8e4',1,'htu21d.h']]],
+  ['htu21d_5fgettemp',['HTU21D_GetTemp',['../htu21d_8h.html#af108e3929cf8898a97160f067c7a757c',1,'htu21d.h']]],
+  ['htu21d_5finit',['HTU21D_Init',['../htu21d_8h.html#ad2b266b90dad1b2b70a80504314a1941',1,'htu21d.h']]]
 ];

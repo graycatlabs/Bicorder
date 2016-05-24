@@ -8,9 +8,13 @@ A library for generating a compass display on the Bicorder.
 {\ttfamily \#include \char`\"{}gcl-\/fixedpoint.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}e\+G\+F\+X\+\_\+\+Data\+Types.\+h\char`\"{}}\\*
 Include dependency graph for bicorder-\/compass.h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{bicorder-compass_8h__incl}
+\end{center}
+\end{figure}
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,10 +124,6 @@ Calculates and returns the current compass heading in degrees.
 \begin{DoxyReturn}{Returns}
 Returns the current heading in degrees 
 \end{DoxyReturn}
-
-
-Definition at line 49 of file bicorder-\/compass.\+c.
-
 \index{bicorder-\/compass.\+h@{bicorder-\/compass.\+h}!Compass\+\_\+\+Draw@{Compass\+\_\+\+Draw}}
 \index{Compass\+\_\+\+Draw@{Compass\+\_\+\+Draw}!bicorder-\/compass.\+h@{bicorder-\/compass.\+h}}
 \subsubsection[{\texorpdfstring{Compass\+\_\+\+Draw(e\+G\+F\+X\+\_\+\+Image\+Plane $\ast$image, u\+Corder\+\_\+\+Compass $\ast$compass, Compass\+\_\+side side)}{Compass_Draw(eGFX_ImagePlane *image, uCorder_Compass *compass, Compass_side side)}}]{\setlength{\rightskip}{0pt plus 5cm}void Compass\+\_\+\+Draw (
@@ -145,10 +145,6 @@ Returns the current compass direction from the given heading,.
 \begin{DoxyReturn}{Returns}
 Returns a compass direction. 
 \end{DoxyReturn}
-
-
-Definition at line 109 of file bicorder-\/compass.\+c.
-
 \index{bicorder-\/compass.\+h@{bicorder-\/compass.\+h}!Compass\+\_\+\+Heading\+To\+Direction@{Compass\+\_\+\+Heading\+To\+Direction}}
 \index{Compass\+\_\+\+Heading\+To\+Direction@{Compass\+\_\+\+Heading\+To\+Direction}!bicorder-\/compass.\+h@{bicorder-\/compass.\+h}}
 \subsubsection[{\texorpdfstring{Compass\+\_\+\+Heading\+To\+Direction(uint16\+\_\+t heading)}{Compass_HeadingToDirection(uint16_t heading)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Compass\+\_\+direction} Compass\+\_\+\+Heading\+To\+Direction (
@@ -168,10 +164,6 @@ Returns the current compass direction from the given heading,.
 \begin{DoxyReturn}{Returns}
 Returns a compass direction. 
 \end{DoxyReturn}
-
-
-Definition at line 63 of file bicorder-\/compass.\+c.
-
 \index{bicorder-\/compass.\+h@{bicorder-\/compass.\+h}!Compass\+\_\+\+Init@{Compass\+\_\+\+Init}}
 \index{Compass\+\_\+\+Init@{Compass\+\_\+\+Init}!bicorder-\/compass.\+h@{bicorder-\/compass.\+h}}
 \subsubsection[{\texorpdfstring{Compass\+\_\+\+Init(u\+Corder\+\_\+\+Compass $\ast$compass)}{Compass_Init(uCorder_Compass *compass)}}]{\setlength{\rightskip}{0pt plus 5cm}void Compass\+\_\+\+Init (
@@ -188,10 +180,6 @@ Initializes the given compass object.
 {\em compass} & The \hyperlink{structuCorder__Compass}{u\+Corder\+\_\+\+Compass} object to initialize \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 39 of file bicorder-\/compass.\+c.
-
 \index{bicorder-\/compass.\+h@{bicorder-\/compass.\+h}!Compass\+\_\+\+Update\+XY@{Compass\+\_\+\+Update\+XY}}
 \index{Compass\+\_\+\+Update\+XY@{Compass\+\_\+\+Update\+XY}!bicorder-\/compass.\+h@{bicorder-\/compass.\+h}}
 \subsubsection[{\texorpdfstring{Compass\+\_\+\+Update\+X\+Y(u\+Corder\+\_\+\+Compass $\ast$compass, int\+\_\+fp x, int\+\_\+fp y)}{Compass_UpdateXY(uCorder_Compass *compass, int_fp x, int_fp y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Compass\+\_\+\+Update\+XY (
@@ -214,7 +202,3 @@ Sets the current X and Y magnetic field strength of the given compass object.
 {\em y} & The current Y axis field strength \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 44 of file bicorder-\/compass.\+c.
-

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['delayms',['delayms',['../bicorder_8c.html#a3ecb5d51db5dae1e4a0e410c3bb246ab',1,'delayms(uint16_t ms):&#160;bicorder.c'],['../eGFX__Driver__C12832A__LPC824_8h.html#a3ecb5d51db5dae1e4a0e410c3bb246ab',1,'delayms(uint16_t ms):&#160;bicorder.c']]]
+  ['int_5ffp_5fdiv',['int_fp_div',['../gcl-fixedpoint_8h.html#ac7b70a1b6980b5da47e896f5d97ee8a2',1,'gcl-fixedpoint.h']]],
+  ['int_5ffp_5fmul',['int_fp_mul',['../gcl-fixedpoint_8h.html#aae0a3c76fcea84dc584a115420a9466b',1,'gcl-fixedpoint.h']]]
 ];
