@@ -41,17 +41,20 @@ void pinMux(void) {
 	// Switch Matrix config:
 	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_SWM);
 
+	// Mux the SPI signals:
 	Chip_SWM_MovablePinAssign(SWM_SPI0_MOSI_IO, SPI_MOSI_PIN);
 	Chip_SWM_MovablePinAssign(SWM_SPI0_SCK_IO, SPI_SCK_PIN);
 	Chip_SWM_MovablePinAssign(SWM_LCD_CS, LCD_CS_PIN);
 
+	// Enable the ADC input for the range finder:
 	Chip_SWM_EnableFixedPin(SWM_FIXED_ADC8);
 
+	// Enabled xtal pins - required to use external osc:
 	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALIN, 1);
 	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALOUT, 1);
 
+	// Enable the I2C0 data pin (clock comes later after a little hack):
 	Chip_SWM_EnableFixedPin(SWM_FIXED_I2C0_SDA);
-
 
 	// IOCON config:
 	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
@@ -60,28 +63,32 @@ void pinMux(void) {
 	Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO8, PIN_MODE_INACTIVE);
 	Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO9, PIN_MODE_INACTIVE);
 
+	// Disable pullup on ADC8 input:
 	Chip_IOCON_PinSetMode(LPC_IOCON, IOCON_PIO18, PIN_MODE_INACTIVE);
 
-	/* Enable Fast Mode Plus for I2C pins */
+	// Enable Fast Mode Plus for I2C data:
 	Chip_IOCON_PinSetI2CMode(LPC_IOCON, IOCON_PIO11, PIN_I2CMODE_FASTPLUS);
 
-
+	// Set the I2C0 clock pin to GPIO output mode:
 	Chip_IOCON_PinSetI2CMode(LPC_IOCON, IOCON_PIO10, PIN_I2CMODE_GPIO);
-
 	Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, 0, MoonLander_IO_SCL);
 	Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 1);
 
+	// Enable the GPIO module clock:
 	Chip_GPIO_Init(LPC_GPIO_PORT);
 
+	// Toggle the I2C clock pin a few times to make sure any confused I2C
+	// devices get back to a good state:
 	for (i=0; i<32; i++) {
 		Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 0);
 		Chip_GPIO_SetPinState(LPC_GPIO_PORT, 0, MoonLander_IO_SCL, 1);
 	}
 
+	// Now set the I2C0 SCL pin to I2C mode and enalbe it:
 	Chip_IOCON_PinSetI2CMode(LPC_IOCON, IOCON_PIO10, PIN_I2CMODE_FASTPLUS);
-
 	Chip_SWM_EnableFixedPin(SWM_FIXED_I2C0_SCL);
 
+	// Don't need these clocks anymore - disable to save a little power:
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_IOCON);
 	Chip_Clock_DisablePeriphClock(SYSCTL_CLOCK_SWM);
 
