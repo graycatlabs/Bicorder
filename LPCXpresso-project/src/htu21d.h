@@ -24,7 +24,7 @@
  * @file htu21d.h
  * @author Alex Hiam - <alex@graycat.io>
  *
- * @brief A library for the HMC5883L 3-axis I2C magnetometer.
+ * @brief A library for the HTU21D I2C relative humidity sensor.
  */
 
 #ifndef HTU21D_H_
